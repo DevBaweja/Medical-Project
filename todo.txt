@@ -1,0 +1,20 @@
+Sign in or Sign up Heading Size
+Title Hidden
+Padding Inputs
+Button Height Width
+Continue with icons
+Colour
+
+Sign up 
+Confirm Password
+O Auth Alter
+
+Sing in
+O Auth Icons 
+
+Alerts
+
+Navbar
+Buttons
+Colour
+Dropdown

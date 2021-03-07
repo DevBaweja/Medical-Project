@@ -1,0 +1,41 @@
+.postButton {
+	width: 280px;
+	height: 47px;
+	margin-bottom: 2%;
+}
+.mob-table {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none;
+}
+
+.mob-table::-webkit-scrollbar {
+	display: none;
+}
+
+.btn .button {
+	color: 2a9d8f !important;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.left-right {
+	padding-left: 48%;
+}
+
+@media (max-width: 768px) {
+	.mob-table {
+		margin-top: 16vh;
+	}
+	.lead-post {
+		font-size: 18px !important;
+		padding: 0;
+		padding-top: 20% !important;
+	}
+	.share-exp-btn {
+		width: 100px !important;
+	}
+}
