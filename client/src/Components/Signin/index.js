@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { signin, authenticate } from '../../Api';
@@ -55,7 +56,7 @@ class Signin extends Component {
 			<div className="container signIn">
 				<div className="row">
 					<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-						<div className="card card-signin my-5">
+						<div className="card card-sign my-5">
 							<div className="card-body">
 								<h5 className="card-title text-center">Sign In</h5>
 								<div
@@ -77,46 +78,45 @@ class Signin extends Component {
 								>
 									New account is successfully created. Please Sign In.
 								</div>
-								<form className="form-signin">
+								<form className="form-sign">
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('email')}
+											id="email"
 											type="email"
 											className="signinput"
 											value={email}
 											required
 										/>
-										{(() => {
-											if (this.state.email === '') {
-												return (
-													<label className="signlabel">
-														Email address
-													</label>
-												);
-											}
-											return <label className="signlabel" />;
-										})()}
-										{/* <label>Email address</label> */}
+										<label
+											htmlFor="email"
+											className={`signlabel ${
+												this.state.email !== '' ? 'signlabelfocus' : ''
+											}`}
+										>
+											Email address
+										</label>
 									</div>
 
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('password')}
+											id="password"
 											type="password"
 											className="signinput"
 											value={password}
 											required
 										/>
-										{(() => {
-											if (this.state.password === '') {
-												return (
-													<label className="signlabel">Password</label>
-												);
-											}
-											return <label className="signlabel" />;
-										})()}
+										<label
+											htmlFor="password"
+											className={`signlabel ${
+												this.state.password !== '' ? 'signlabelfocus' : ''
+											}`}
+										>
+											Password
+										</label>
 									</div>
-									<p className="text-right">
+									<p className="text-right forget">
 										<small>
 											<a href="/">Forgot password?</a>
 										</small>
@@ -129,12 +129,11 @@ class Signin extends Component {
 										Sign in
 									</button>
 									<p className="text-center">
-										<br />
-										or <br /> <br /> continue with {'  '}
+										or continue with {'  '}
 										{/* <a href='/' className="border-around"><i className="fa fa-google" /> </a> {'  '}
 										<a href='/' className="border-around"><i className="fa fa-facebook" /> </a> {'  '}
 										<a href='/' className="border-around"><i className="fa fa-twitter" /> </a> */}
-										<ul className="social-network social-circle ">
+										<ul className="social-network social-circle">
 											<li>
 												<a
 													href="/"

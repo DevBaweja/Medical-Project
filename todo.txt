@@ -5,12 +5,12 @@ Button Height Width
 Continue with icons
 Colour
 
-Sign up 
+Sign up
 Confirm Password
 O Auth Alter
 
 Sing in
-O Auth Icons 
+O Auth Icons
 
 Alerts
 

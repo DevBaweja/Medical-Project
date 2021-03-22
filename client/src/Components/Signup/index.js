@@ -1,10 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
 import React, { Component } from 'react';
 import { signup } from '../../Api';
-import './style.css';
 
 class Signup extends Component {
 	constructor() {
@@ -14,6 +14,7 @@ class Signup extends Component {
 			name: '',
 			email: '',
 			password: '',
+			confirmpassword: '',
 			error: '',
 			open: false, //  for info message display
 		};
@@ -28,15 +29,15 @@ class Signup extends Component {
 	clickSubmit = event => {
 		// on click submit takes the event
 		event.preventDefault(); // to not reload page without making any changes
-		const { name, email, password } = this.state;
+		const { name, email, password, confirmpassword } = this.state;
+
 		const user = {
 			// create new user with these parameters
 			name,
 			email,
 			password,
+			confirmpassword,
 		};
-		// console.log(user);
-		// this.signup(user).then(data =>{
 		signup(user).then(data => {
 			if (data.error) this.setState({ error: data.error });
 			else
@@ -51,12 +52,12 @@ class Signup extends Component {
 	};
 
 	render() {
-		const { name, email, password, error, open } = this.state; // Destruct
+		const { name, email, password, confirmpassword, error, open } = this.state; // Destruct
 		return (
 			<div className="container">
 				<div className="row">
 					<div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-						<div className="card card-signin my-5">
+						<div className="card card-sign my-5">
 							<div className="card-body">
 								<h5 className="card-title text-center">Sign Up</h5>
 								<div
@@ -72,71 +73,84 @@ class Signup extends Component {
 								>
 									New account is successfully created. Please Sign In.
 								</div>
-								<form className="form-signin">
+								<form className="form-sign">
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('name')}
+											id="name"
 											type="text"
 											className="signinput"
 											value={name}
 											required
 										/>
-										{(() => {
-											if (this.state.name === '') {
-												return <label className="signlabel">Name</label>;
-											}
-											return <label className="signlabel" />;
-										})()}
+										<label
+											htmlFor="name"
+											className={`signlabel ${
+												this.state.name !== '' ? 'signlabelfocus' : ''
+											}`}
+										>
+											Name
+										</label>
 									</div>
-
-									{/* <div className="form-label-group">
-										<input
-											onChange={this.handleChange('username')}
-											type="text"
-											className="form-control"
-											value={username}
-											required
-										/>
-										<label>Username</label>
-									</div> */}
-
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('email')}
+											id="email"
 											type="email"
 											className="signinput"
 											value={email}
 											required
 										/>
-										{(() => {
-											if (this.state.email === '') {
-												return (
-													<label className="signlabel">
-														Email address
-													</label>
-												);
-											}
-											return <label className="signlabel" />;
-										})()}
+										<label
+											htmlFor="email"
+											className={`signlabel ${
+												this.state.email !== '' ? 'signlabelfocus' : ''
+											}`}
+										>
+											Email Address
+										</label>
 									</div>
 
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('password')}
+											id="password"
 											type="password"
 											className="signinput"
 											value={password}
 											required
 										/>
-										{(() => {
-											if (this.state.password === '') {
-												return (
-													<label className="signlabel">Password</label>
-												);
-											}
-											return <label className="signlabel" />;
-										})()}
+										<label
+											htmlFor="password"
+											className={`signlabel ${
+												this.state.password !== '' ? 'signlabelfocus' : ''
+											}`}
+										>
+											Password
+										</label>
 									</div>
+
+									<div className="form-label-group">
+										<input
+											onChange={this.handleChange('confirmpassword')}
+											id="confirmpassword"
+											type="password"
+											className="signinput"
+											value={confirmpassword}
+											required
+										/>
+										<label
+											htmlFor="confirmpassword"
+											className={`signlabel ${
+												this.state.confirmpassword !== ''
+													? 'signlabelfocus'
+													: ''
+											}`}
+										>
+											Confirm Password
+										</label>
+									</div>
+
 									<button
 										className="btn btn-lg btn-primary text-uppercase signBtn"
 										type="submit"
