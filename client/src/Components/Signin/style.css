@@ -82,13 +82,6 @@
 	margin-right: auto;
 }
 
-/* .border-bottom{
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 2px;
- } */
-
 .signinput {
 	width: 100% !important;
 }
@@ -125,6 +118,25 @@
 	font-size: 12px !important;
 }
 
+.continue-with {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 1rem;
+}
+
+.continue-with--label {
+	padding: 0 1rem;
+	margin-top: -0.2rem;
+}
+
+.continue-with > :first-child,
+.continue-with > :last-child {
+	height: 0.1rem;
+	flex-grow: 1;
+	background-color: #d3d3d3;
+}
+
 /*
  .border-around{
    border: 1px dotted black;
@@ -133,4 +145,11 @@
    padding-right: 4px;
    padding-bottom: 2px;
    border-radius: 20px;
+ } */
+
+/* .border-bottom{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 2px;
  } */

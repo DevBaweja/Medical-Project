@@ -1,8 +1,4 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable jsx-a11y/anchor-is-valid */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable no-undef */
-/* eslint-disable no-restricted-globals */
 import React, { Component } from 'react';
 import { signup } from '../../Api';
 

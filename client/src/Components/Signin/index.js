@@ -129,10 +129,14 @@ class Signin extends Component {
 										Sign in
 									</button>
 									<p className="text-center">
-										or continue with {'  '}
-										{/* <a href='/' className="border-around"><i className="fa fa-google" /> </a> {'  '}
-										<a href='/' className="border-around"><i className="fa fa-facebook" /> </a> {'  '}
-										<a href='/' className="border-around"><i className="fa fa-twitter" /> </a> */}
+										<div className="continue-with">
+											<span />
+											<span className="continue-with--label">
+												or continue with
+											</span>
+											<span />
+										</div>
+
 										<ul className="social-network social-circle">
 											<li>
 												<a
@@ -149,15 +153,15 @@ class Signin extends Component {
 												</a>
 											</li>
 											<li>
-												<a href="/" className="icoGoogle" title="Google +">
-													<i className="fa fa-google-plus" />
+												<a href="/" className="icoGoogle" title="Google">
+													<i className="fa fa-google" />
 												</a>
 											</li>
 										</ul>
 									</p>
 									<hr className="my-4" />
 									<p className="text-center">
-										Don't have an account?<a href="/signup"> SignUp</a>
+										Don't have an account?<a href="/signup"> Sign Up</a>
 									</p>
 								</form>
 							</div>
