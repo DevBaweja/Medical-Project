@@ -92,8 +92,8 @@ class ContactUs extends Component {
 						<div className="col-md-12 col-sm-12">
 							<ul className="social-network social-circle">
 								<li>
-									<a href="/" className="icoRss" title="Rss">
-										<i className="fa fa-rss" />
+									<a href="/" className="icoGoogle" title="Google">
+										<i className="fa fa-google" />
 									</a>
 								</li>
 								<li>
@@ -107,13 +107,13 @@ class ContactUs extends Component {
 									</a>
 								</li>
 								<li>
-									<a href="/" className="icoGoogle" title="Google +">
-										<i className="fa fa-google-plus" />
+									<a href="/" className="icoLinkedin" title="Linkedin">
+										<i className="fa fa-linkedin" />
 									</a>
 								</li>
 								<li>
-									<a href="/" className="icoLinkedin" title="Linkedin">
-										<i className="fa fa-linkedin" />
+									<a href="/" className="icoRss" title="Rss">
+										<i className="fa fa-rss" />
 									</a>
 								</li>
 							</ul>

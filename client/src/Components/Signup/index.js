@@ -154,6 +154,37 @@ class Signup extends Component {
 									>
 										SignUp
 									</button>
+									<p className="text-center">
+										<div className="continue-with">
+											<span />
+											<span className="continue-with--label">
+												or continue with
+											</span>
+											<span />
+										</div>
+
+										<ul className="social-network social-circle">
+											<li>
+												<a href="/" className="icoGoogle" title="Google">
+													<i className="fa fa-google" />
+												</a>
+											</li>
+											<li>
+												<a
+													href="/"
+													className="icoFacebook"
+													title="Facebook"
+												>
+													<i className="fa fa-facebook" />
+												</a>
+											</li>
+											<li>
+												<a href="/" className="icoTwitter" title="Twitter">
+													<i className="fa fa-twitter" />
+												</a>
+											</li>
+										</ul>
+									</p>
 									<hr className="my-4" />
 									<p className="text-center">
 										Already have an account? {'  '}

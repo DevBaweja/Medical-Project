@@ -139,6 +139,11 @@ class Signin extends Component {
 
 										<ul className="social-network social-circle">
 											<li>
+												<a href="/" className="icoGoogle" title="Google">
+													<i className="fa fa-google" />
+												</a>
+											</li>
+											<li>
 												<a
 													href="/"
 													className="icoFacebook"
@@ -150,11 +155,6 @@ class Signin extends Component {
 											<li>
 												<a href="/" className="icoTwitter" title="Twitter">
 													<i className="fa fa-twitter" />
-												</a>
-											</li>
-											<li>
-												<a href="/" className="icoGoogle" title="Google">
-													<i className="fa fa-google" />
 												</a>
 											</li>
 										</ul>
