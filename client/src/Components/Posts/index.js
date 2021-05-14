@@ -1,10 +1,8 @@
 import React from 'react';
-//import Posts from './Posts';
 import './style.css';
 
 import Posts from './Posts';
 import { Link, withRouter } from 'react-router-dom';
-//import { Link } from 'react-router-dom'
 import { signout, isAuthenticated } from '../../Api';
 
 const isActive = (history, path) => {

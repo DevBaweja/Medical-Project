@@ -26,7 +26,6 @@ class Posts extends React.Component {
 	loadPosts = page => {
 		list(page).then(data => {
 			if (!data.error) {
-				console.log(data.data);
 				this.setState({ posts: data.data });
 				return;
 			}
@@ -88,64 +87,7 @@ class Posts extends React.Component {
 
 		return (
 			<div className="row">
-				<main>
-					<div className="post-card-container">
-						{posts.map(post => {
-							let posterUrl = '';
-							let posterName = 'Unknown';
-							if (post.postedBy) {
-								posterUrl = `/user/${post.postedBy._id}`;
-								posterName = post.postedBy.name;
-							}
-
-							return (
-								<div className="post-card">
-									<div className="post-card__header">
-										<div className="post-card__picture">
-											<div className="post-card__picture-overlay">
-												{' '}
-												&nbsp;{' '}
-											</div>
-											<img src="" alt="" className="post-card__picture-img" />
-										</div>
-										<h3 className="post_card__title">
-											<span> {post.title} </span>
-										</h3>
-									</div>
-									<div className="post-card__details">
-										<h4 className="post-card__sub-heading"> 3 day tour </h4>
-										<p className="post-card__text"> Summary </p>
-										<div className="post-card_data">
-											{/* <svg className="post-card__icon" xlink:href="" /> */}
-											<span> start </span>
-										</div>
-										<div className="post-card_data">
-											{/* <svg className="post-card__icon" xlink:href="" /> */}
-											<span> stop </span>
-										</div>
-									</div>
-									<div className="post-card__footer">
-										<p>
-											<span className="post-card__footer-value"> 3 </span>
-											<span className="post-card__footer-text">likes</span>
-										</p>
-										<p className="post-card__ratings">
-											<span className="post-card__footer-value">4</span>
-											<span className="post-card__footer-text">rating</span>
-											<a
-												href="/posts"
-												className="post-btn btn btn-lg btn-primary text-uppercase"
-											>
-												Details
-											</a>
-										</p>
-									</div>
-								</div>
-							);
-						})}
-					</div>
-				</main>
-				{/* <Table striped bordered hover>
+				<Table striped bordered hover>
 					<thead>
 						<tr>
 							<th>Heading</th>
@@ -186,7 +128,7 @@ class Posts extends React.Component {
 							);
 						})}
 					</tbody>
-				</Table> */}
+				</Table>
 				<div className="center">
 					<Pagination>
 						{this.state.page > 1 ? (

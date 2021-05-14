@@ -3,28 +3,28 @@ const { getDiseases, getDisease, createDisease, updateDisease, deleteDisease } =
 const router = express.Router();
 
 // get all
-router.get('/diseases', function(req, res) {
-	getDiseases(req, res);
+router.get('/diseases', function (req, res) {
+    getDiseases(req, res);
 });
 
 //create route
-router.post('/disease', function(req, res) {
-	createDisease(req, res);
+router.post('/disease', function (req, res) {
+    createDisease(req, res);
 });
 
 //read route
-router.get('/diseases/:dId', function(req, res) {
-	getDisease(req, res);
+router.get('/diseases/:dId', function (req, res) {
+    getDisease(req, res);
 });
 
 //update route
 router.put('/disease/:dId', (req, res) => {
-	updateDisease(req, res);
+    updateDisease(req, res);
 });
 
 //delete route
-router.delete('/disease/delete/:dId', function(req, res) {
-	deleteDisease(req, res);
+router.delete('/disease/delete/:dId', function (req, res) {
+    deleteDisease(req, res);
 });
 
 module.exports = router;

@@ -11,6 +11,8 @@ class Signup extends Component {
 			email: '',
 			password: '',
 			confirmpassword: '',
+			showpassword: false,
+			showconfirmpassword: false,
 			error: '',
 			open: false, //  for info message display
 		};
@@ -20,6 +22,15 @@ class Signup extends Component {
 		// using name as placeholder argument, can be anything
 		this.setState({ error: '' }); // when handle change remove the old error so they are not displayed
 		this.setState({ [name]: event.target.value }); // one event for all the changes
+	};
+
+	hideAlert = name => () => {
+		if (name === 'error') this.setState({ error: '' });
+		if (name === 'open') this.setState({ open: false });
+	};
+
+	togglePassword = name => async () => {
+		await this.setState(prevState => ({ [name]: !prevState[name] }));
 	};
 
 	clickSubmit = event => {
@@ -35,20 +46,33 @@ class Signup extends Component {
 			confirmpassword,
 		};
 		signup(user).then(data => {
-			if (data.error) this.setState({ error: data.error });
-			else
-				this.setState({
-					error: '',
-					name: '',
-					email: '',
-					password: '',
-					open: true,
-				});
+			if (data.error) {
+				this.setState({ error: data.error });
+				return;
+			}
+			this.setState({
+				error: '',
+				name: '',
+				email: '',
+				password: '',
+				confirmpassword: '',
+				open: true,
+			});
 		});
 	};
 
 	render() {
-		const { name, email, password, confirmpassword, error, open } = this.state; // Destruct
+		const {
+			name,
+			email,
+			password,
+			confirmpassword,
+			showpassword,
+			showconfirmpassword,
+			error,
+			open,
+		} = this.state; // Destruct
+		console.log(this.state);
 		return (
 			<div className="container">
 				<div className="row">
@@ -60,14 +84,30 @@ class Signup extends Component {
 									className="alert alert-danger"
 									style={{ display: error ? '' : 'none' }} // conditional inline css
 								>
-									{error}
+									<button
+										type="button"
+										className="icon-cross"
+										onClick={this.hideAlert('error')}
+									>
+										<i className="fa fa-times" />
+									</button>
+									<span>{error}</span>
 								</div>
 
 								<div
 									className="alert alert-info"
 									style={{ display: open ? '' : 'none' }}
 								>
-									New account is successfully created. Please Sign In.
+									<button
+										type="button"
+										className="icon-cross"
+										onClick={this.hideAlert('open')}
+									>
+										<i className="fa fa-times" />
+									</button>
+									<span>
+										New account is successfully created. Please Sign In.
+									</span>
 								</div>
 								<form className="form-sign">
 									<div className="form-label-group">
@@ -111,7 +151,7 @@ class Signup extends Component {
 										<input
 											onChange={this.handleChange('password')}
 											id="password"
-											type="password"
+											type={!showpassword ? 'password' : 'text'}
 											className="signinput"
 											value={password}
 											required
@@ -124,13 +164,24 @@ class Signup extends Component {
 										>
 											Password
 										</label>
+										<button
+											type="button"
+											className="icon-eye"
+											onClick={this.togglePassword('showpassword')}
+										>
+											<i
+												className={`fa fa-${
+													!showpassword ? 'eye' : 'eye-slash'
+												}`}
+											/>
+										</button>
 									</div>
 
 									<div className="form-label-group">
 										<input
 											onChange={this.handleChange('confirmpassword')}
 											id="confirmpassword"
-											type="password"
+											type={!showconfirmpassword ? 'password' : 'text'}
 											className="signinput"
 											value={confirmpassword}
 											required
@@ -145,6 +196,17 @@ class Signup extends Component {
 										>
 											Confirm Password
 										</label>
+										<button
+											type="button"
+											className="icon-eye"
+											onClick={this.togglePassword('showconfirmpassword')}
+										>
+											<i
+												className={`fa fa-${
+													!showconfirmpassword ? 'eye' : 'eye-slash'
+												}`}
+											/>
+										</button>
 									</div>
 
 									<button

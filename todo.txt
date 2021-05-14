@@ -9,7 +9,7 @@ Sign up
 Confirm Password
 O Auth Alter
 
-Sing in
+Sign in
 O Auth Icons
 
 Alerts
@@ -18,3 +18,12 @@ Navbar
 Buttons
 Colour
 Dropdown
+
+Posts
+Cards - Natours
+Search Bar - Counter
+
+
+Exporting multiple lines
+Using previous state
+Async state errors

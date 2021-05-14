@@ -77,9 +77,6 @@
 .signBtn {
 	display: block;
 	background: #0062cc;
-	border-radius: 3px !important;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .signinput {
@@ -137,6 +134,34 @@
 	background-color: #d3d3d3;
 }
 
+.alert {
+	position: relative;
+}
+
+.icon-cross,
+.icon-cross:focus,
+.icon-cross:active,
+.icon-eye,
+.icon-eye:focus,
+.icon-eye:active {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0.2rem !important;
+	padding: 0;
+	cursor: pointer;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+
+.icon-eye,
+.icon-eye:focus,
+.icon-eye:active {
+	top: 50%;
+	transform: translate(-1rem, -35%);
+	z-index: 1;
+}
 /*
  .border-around{
    border: 1px dotted black;

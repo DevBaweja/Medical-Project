@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { signin, authenticate } from '../../Api';
-import loader from '../../Images/loader2.gif';
 import './style.css';
 
 class Signin extends Component {
@@ -11,16 +10,24 @@ class Signin extends Component {
 		this.state = {
 			email: '',
 			password: '',
+			showpassword: false,
 			error: '',
 			redirectToReferer: false,
 			loading: false,
-			open: false,
 		};
 	}
 
 	handleChange = name => event => {
 		this.setState({ error: '' });
 		this.setState({ [name]: event.target.value });
+	};
+
+	hideAlert = () => {
+		this.setState({ error: '' });
+	};
+
+	togglePassword = async () => {
+		await this.setState(prevState => ({ showpassword: !prevState.showpassword }));
 	};
 
 	clickSubmit = event => {
@@ -30,15 +37,12 @@ class Signin extends Component {
 		const user = {
 			email,
 			password,
-			open: true,
 		};
-		// console.log(user);
 		signin(user).then(data => {
 			if (data.error) {
 				this.setState({ error: data.error, loading: false });
 			} else {
 				// authenticate
-				// this.authenticate(data);
 				authenticate(data, () => {
 					this.setState({ redirectToReferer: true }); // redirect
 				});
@@ -47,7 +51,7 @@ class Signin extends Component {
 	};
 
 	render() {
-		const { email, password, error, redirectToReferer, loading, open } = this.state;
+		const { email, password, showpassword, error, redirectToReferer, loading } = this.state;
 
 		if (redirectToReferer) {
 			return <Redirect to="/" />;
@@ -63,20 +67,14 @@ class Signin extends Component {
 									className="alert alert-danger"
 									style={{ display: error ? '' : 'none' }}
 								>
-									{error}
-								</div>
-								{loading ? (
-									<div>
-										<img src={loader} alt="Loading..." />
-									</div>
-								) : (
-									''
-								)}
-								<div
-									className="alert alert-info"
-									style={{ display: open ? '' : 'none' }}
-								>
-									New account is successfully created. Please Sign In.
+									<button
+										type="button"
+										className="icon-cross"
+										onClick={this.hideAlert}
+									>
+										<i className="fa fa-times" />
+									</button>
+									<span>{error}</span>
 								</div>
 								<form className="form-sign">
 									<div className="form-label-group">
@@ -102,7 +100,7 @@ class Signin extends Component {
 										<input
 											onChange={this.handleChange('password')}
 											id="password"
-											type="password"
+											type={!showpassword ? 'password' : 'text'}
 											className="signinput"
 											value={password}
 											required
@@ -115,6 +113,17 @@ class Signin extends Component {
 										>
 											Password
 										</label>
+										<button
+											type="button"
+											className="icon-eye"
+											onClick={this.togglePassword}
+										>
+											<i
+												className={`fa fa-${
+													!showpassword ? 'eye' : 'eye-slash'
+												}`}
+											/>
+										</button>
 									</div>
 									<p className="text-right forget">
 										<small>
@@ -126,7 +135,7 @@ class Signin extends Component {
 										type="submit"
 										onClick={this.clickSubmit}
 									>
-										Sign in
+										{loading ? 'Signing In' : 'Sign in'}
 									</button>
 									<p className="text-center">
 										<div className="continue-with">
