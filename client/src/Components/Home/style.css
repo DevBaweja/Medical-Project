@@ -1,37 +1,43 @@
+.section1 {
+	clip-path: ellipse(100% 55% at 48% 44%);
+	background-color: #e5faf5;
+}
 .buttonJoin {
 	display: block;
 
 	font-size: 24px;
 	padding: 12px;
 	/* margin: 20px; */
-	border-radius: 50px;
-	width: 600px;
-	margin-top: 50px;
+	border-radius: 5px;
+	/* width: 2rem; */
+	/* margin-top: 50px; */
 	position: absolute;
-	left: 8%;
+	left: 20%;
 
 	text-decoration: none !important;
 }
 .buttonJoinLight {
 	margin: auto;
-	background-color: rgba(0, 0, 0, 0);
-	color: #2f2f2f;
-	border: 2px solid #2f2f2f;
+	background-color: #00d09c;
+	color: #e5faf5;
+	border: 2px solid #00d09c;
+	width: 50%;
 }
-.buttonJoinDark {
-	background-color: #007AFF;
+/* .buttonJoinDark {
+	background-color: #007aff;
 	color: #ffffff;
 	margin: auto;
 	margin-top: 80px;
-}
+} */
 .mainbtn {
 	text-align: center;
 	align-items: center;
 	align-content: center;
-	margin-top: 5%;
+	/* margin-top: 5%; */
 }
 .mainBtn {
 	display: inline;
+	background-color: #00d09c;
 }
 .buttonJoin1 {
 	display: block;
@@ -47,17 +53,20 @@
 
 .main-title {
 	font-weight: 600 !important;
-	font-size: 3.5em;
-	margin-top: 3em;
-	padding-right: 25%;
+	font-size: 3.5rem;
+	font-family: Roboto;
+	margin-top: 5em;
+	padding-right: 40%;
 	color: #032122;
 }
 
 .lead {
-	font-size: 25px !important;
+	font-size: 20px !important;
 	font-weight: 400;
+	margin-right: 12.5%;
+
 	/* margin: 0 !important; */
-	margin-right: 25%;
+	/* margin-right: 25%; */
 }
 .lead-home {
 	color: #032122;
@@ -91,7 +100,7 @@
 
 .centre-logo {
 	height: 85vh;
-	width: 50vw;
+	width: 45vw;
 	padding-top: 15vh;
 }
 

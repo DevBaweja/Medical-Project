@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css';
 import CardLayout from '../WhatWeDo';
-import logo from '../../Images/logo.svg';
-//import Background from '../../Images/Home/bg.svg';
-import MainSvg from '../../Images/Home/BG_new.svg';
+import logo from '../../Images/logo1.png';
+import MainSvg from '../../Images/Home/med.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
 import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
-import { Container, Row, Col } from 'react-bootstrap';
 import { countpost } from '../../Api/Post';
 import { countuser } from '../../Api/User';
 
@@ -20,6 +19,20 @@ class Home extends Component {
 		postCount: 0,
 		userCount: 0,
 	};
+
+	componentDidMount() {
+		countpost().then(data => {
+			this.setState({
+				postCount: data.count,
+			});
+		});
+		countuser().then(data => {
+			this.setState({
+				userCount: data.count,
+			});
+		});
+	}
+
 	onSubscribe = e => {
 		e.preventDefault();
 		subscribe(this.state).then(res => {
@@ -36,18 +49,6 @@ class Home extends Component {
 			email: e.target.value,
 		});
 	};
-	componentDidMount() {
-		countpost().then(data => {
-			this.setState({
-				postCount: data.count,
-			});
-		});
-		countuser().then(data => {
-			this.setState({
-				userCount: data.count,
-			});
-		});
-	}
 
 	render() {
 		return (
@@ -56,7 +57,7 @@ class Home extends Component {
 					<div
 						style={{
 							//backgroundImage: `url(${Background})`,
-							backgroundColor: '#f4f4f4',
+							// backgroundColor: 'white',
 							// flex: '1',
 							// alignSelf: 'stretch',
 							position: 'absolute',
@@ -66,45 +67,38 @@ class Home extends Component {
 							top: '0',
 						}}
 					>
-						<div className="container-fluid" style={{ minHeight: '50px' }}>
+						<div className="container-fluid section1" style={{ minHeight: '50px' }}>
 							<div className="text-white text-center jbtron">
 								<Container fluid>
 									<Row>
 										<Col md={6} sm={12}>
-											<img
-												src={MainSvg}
-												className="img-responsive centre-logo"
-												alt="logo"
-											/>
-										</Col>
-
-										<Col md={6} sm={12}>
 											<div style={{ paddingTop: '1em' }}>
 												<div>
-													<h2 className="main-title">
-														Medical Counselling
-													</h2>
+													{/* <img src={logo} className="img-responsive" /> */}
+
+													<h2 className="main-title">MediPro</h2>
 												</div>
 
 												<div>
 													<p className="lead lead-home">
-														Experience of common man help each other
+														Making a meaningful difference in patients’
+														lives
 													</p>
 												</div>
 
 												<div className="row mainbtn">
 													<div className="mainBtn">
-														<Link to="/share_experience">
+														<Link to="/signup">
 															<button
 																type="button"
-																className="btn btn-default buttonJoin buttonJoinLight float-right"
+																className="buttonJoin buttonJoinLight"
 															>
-																Share Experience
+																Get Started
 															</button>
 														</Link>
 													</div>
 
-													<div className="mainBtn">
+													{/* <div className="mainBtn">
 														<Link to="/share_experience">
 															<button
 																type="button"
@@ -113,9 +107,19 @@ class Home extends Component {
 																Ask Suggestion
 															</button>
 														</Link>
-													</div>
+													</div> */}
 												</div>
 											</div>
+										</Col>
+
+										<Col md={6} sm={12}>
+											<img
+												src={MainSvg}
+												className="img-responsive centre-logo"
+												// width="100%"
+												// height="auto"
+												alt="logo"
+											/>
 										</Col>
 									</Row>
 								</Container>
@@ -126,9 +130,9 @@ class Home extends Component {
 							<div>
 								<CardLayout />
 								<div>
-									<h4 className="text-center mb-4 mt-5">
+									<h2 className="text-center" style={{ marginTop: 100 }}>
 										What people say about our platform
-									</h4>
+									</h2>
 									<Testimonial slides={Testimonialdata} />
 								</div>
 								<div className="sta row">
@@ -181,7 +185,7 @@ class Home extends Component {
 										</div>
 									</div>
 								</div>
-								<div className="container">
+								<div className="container text-center">
 									<Link to="/Signup">
 										<button
 											type="button"
