@@ -1,0 +1,38 @@
+.faq__container {
+	margin-bottom: 50px;
+}
+
+.faq__main {
+	padding: 30px 0;
+	font-weight: 500;
+	font-size: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 2px;
+}
+.faq__card {
+	/* margin-top: 2rem; */
+	padding: 0;
+}
+
+.faq__toggle {
+	padding: 20px 25px !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.faq__span {
+	flex: 1;
+	font-size: 18px;
+}
+
+.faq__icon {
+	display: flex;
+	justify-content: center;
+}
+
+.faq__content {
+	font-size: 16px;
+	/* background-color: rgb(248 , 246, 245); */
+}

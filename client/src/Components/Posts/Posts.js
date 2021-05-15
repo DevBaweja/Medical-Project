@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Pagination } from 'react-bootstrap';
 import { list, countpost } from '../../Api/Post';
+import DefaultPost from '../../Images/mountains.jpg';
 import { serverUrl } from '../variables';
 
 import './style.css';
@@ -110,6 +111,9 @@ class Posts extends React.Component {
 												src={`${serverUrl}/api/post/photo/${post._id}`}
 												alt={post.title}
 												className="post-card__picture-img"
+												onError={e => {
+													e.target.src = `${DefaultPost}`;
+												}}
 											/>
 										</div>
 										<h3 className="post_card__title">
