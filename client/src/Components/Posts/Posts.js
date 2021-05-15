@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Table, Pagination } from 'react-bootstrap';
+import { Pagination } from 'react-bootstrap';
 import { list, countpost } from '../../Api/Post';
+import { serverUrl } from '../variables';
+
 import './style.css';
 // import { isAuthenticated } from '../../Api';
 
@@ -91,6 +93,7 @@ class Posts extends React.Component {
 				<main>
 					<div className="post-card-container">
 						{posts.map(post => {
+							console.log(post);
 							let posterUrl = '';
 							let posterName = 'Unknown';
 							if (post.postedBy) {
@@ -102,91 +105,62 @@ class Posts extends React.Component {
 								<div className="post-card">
 									<div className="post-card__header">
 										<div className="post-card__picture">
-											<div className="post-card__picture-overlay">
-												{' '}
-												&nbsp;{' '}
-											</div>
-											<img src="" alt="" className="post-card__picture-img" />
+											<div className="post-card__picture-overlay">&nbsp;</div>
+											<img
+												src={`${serverUrl}/api/post/photo/${post._id}`}
+												alt={post.title}
+												className="post-card__picture-img"
+											/>
 										</div>
 										<h3 className="post_card__title">
 											<span> {post.title} </span>
 										</h3>
 									</div>
 									<div className="post-card__details">
-										<h4 className="post-card__sub-heading"> 3 day tour </h4>
-										<p className="post-card__text"> Summary </p>
-										<div className="post-card_data">
-											{/* <svg className="post-card__icon" xlink:href="" /> */}
-											<span> start </span>
-										</div>
-										<div className="post-card_data">
-											{/* <svg className="post-card__icon" xlink:href="" /> */}
-											<span> stop </span>
-										</div>
+										<h4 className="post-card__sub-heading">
+											<Link href={`${posterUrl}`} to={`${posterUrl}`}>
+												{posterName}
+											</Link>
+										</h4>
+										<p
+											className="post-card__text"
+											style={{ wordBreak: 'break-word' }}
+										>
+											{post.description}
+										</p>
+										{post.tags.map(tag => (
+											<div className="post-card__data">
+												<i className="fa fa-tag post-card__icon" />
+												<span> {tag} </span>
+											</div>
+										))}
 									</div>
 									<div className="post-card__footer">
-										<p>
-											<span className="post-card__footer-value"> 3 </span>
-											<span className="post-card__footer-text">likes</span>
-										</p>
 										<p className="post-card__ratings">
-											<span className="post-card__footer-value">4</span>
-											<span className="post-card__footer-text">rating</span>
-											<a
-												href="/posts"
-												className="post-btn btn btn-lg btn-primary text-uppercase"
-											>
-												Details
-											</a>
+											<i className="fa fa-heart post-card__icon" />
+											<span className="post-card__footer-text">
+												{post.likes.length} likes
+											</span>
 										</p>
+										<p className="post-card__date">
+											<i className="fa fa-calendar post-card__icon" />
+											<span className="post-card__footer-text">
+												{new Date(post.created).toDateString()}
+											</span>
+										</p>
+										<Link
+											href={`/post/${post._id}`}
+											to={`/post/${post._id}`}
+											className="post-btn btn btn-lg btn-primary"
+										>
+											Details
+										</Link>
 									</div>
 								</div>
 							);
 						})}
 					</div>
 				</main>
-				{/* <Table striped bordered hover>
-					<thead>
-						<tr>
-							<th>Heading</th>
-							<th>Date Posted</th>
-							<th>Posted by</th>
-							<th>Disease</th>
-							<th>Likes</th>
-							<th>Summary</th>
-							<th>Read more</th>
-						</tr>
-					</thead>
-					<tbody>
-						{posts.map(post => {
-							console.log(post);
-
-							let posterUrl = '';
-							let posterName = 'Unknown';
-							if (post.postedBy) {
-								posterUrl = `/user/${post.postedBy._id}`;
-								posterName = post.postedBy.name;
-							}
-
-							return (
-								<tr>
-									<td className="card-title">{post.title}</td>
-									<td className="">{new Date(post.created).toDateString()}</td>
-									<td className="">
-										<Link to={`${posterUrl}`}>{posterName} </Link>
-									</td>
-									<td className="">{post.tags[0]}</td>
-									<td className="">{post.likes.length}</td>
-									<td style={{ wordBreak: 'break-word' }}>{post.description}</td>
-
-									<td>
-										<Link to={`/post/${post._id}`}>Read more</Link>
-									</td>
-								</tr>
-							);
-						})}
-					</tbody>
-				</Table> */}
 				<div className="center">
 					<Pagination>
 						{this.state.page > 1 ? (

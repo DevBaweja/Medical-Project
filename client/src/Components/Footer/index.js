@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../Images/logo.svg';
+import logo from '../../Images/logo1.png';
 import './style.css';
 import { isAuthenticated } from '../../Api';
 
@@ -8,7 +8,7 @@ class Footer extends Component {
 	render() {
 		return (
 			<div>
-				<footer className="bg-dark text-white mt-4">
+				<footer className=" foot text-white mt-4">
 					<div className="container text-center text-md-left">
 						<div className="row">
 							<hr className="clearfix w-100 d-md-none" />
@@ -19,13 +19,15 @@ class Footer extends Component {
 											src={logo}
 											className="img-responsive img-css"
 											alt="logo"
+											width="400"
+											height="400"
 										/>
 									</li>
 								</ul>
 							</div>
 
 							<div className="col-md-2 mx-auto">
-								<h5 className="mt-3 mb-4 heading">Features</h5>
+								<h5 className="mt-3 mb-4 heading">FEATURES</h5>
 								<ul className="list-unstyled">
 									<li>
 										<Link className="link" to="/posts">
@@ -46,7 +48,7 @@ class Footer extends Component {
 							</div>
 
 							<div className="col-md-2 mx-auto">
-								<h5 className="mt-3 mb-4 heading">Community</h5>
+								<h5 className="mt-3 mb-4 heading">COMMUNITY</h5>
 								<ul className="list-unstyled">
 									<li>
 										<a className="link" href="#!">
@@ -67,7 +69,7 @@ class Footer extends Component {
 							</div>
 
 							<div className="col-md-2 mx-auto">
-								<h5 className=" mt-3 mb-4 heading">Company</h5>
+								<h5 className=" mt-3 mb-4 heading">COMPANY</h5>
 								<ul className="list-unstyled">
 									<li>
 										<Link className="link" to="/privacypolicy">
@@ -93,7 +95,7 @@ class Footer extends Component {
 							</div>
 
 							<div className="col-md-2 mx-auto">
-								<h5 className=" mt-3 mb-4 heading">Links</h5>
+								<h5 className=" mt-3 mb-4 heading">LINKS</h5>
 								<ul className="list-unstyled">
 									<li>
 										<Link className="link" to="/">
@@ -123,28 +125,23 @@ class Footer extends Component {
 					<ul className="list-unstyled list-inline text-center ">
 						<li className="list-inline-item">
 							<a className="btn-floating mx-1 link _color" target="_blank" href="/">
-								<i className="fa fa-facebook" />
+								<i className="fa fa-facebook-official fa-lg" />
 							</a>
 						</li>
 						<li className="list-inline-item">
 							<a className="btn-floating mx-1 link _color" target="_blank" href="/">
-								<i className="fa fa-youtube" />
+								<i class="fa fa-youtube-play fa-lg" aria-hidden="true" />
 							</a>
 						</li>
 						<li className="list-inline-item">
 							<a className="btn-floating mx-1 link _color" target="_blank" href="/">
-								<i className="fa fa-envelope" />
+								<i class="fa fa-twitter-square fa-lg" aria-hidden="true" />
 							</a>
 						</li>
 					</ul>
 
 					<div className="footer-copyright text-center py-3 heading container">
-						<p>© 2018 Copyright</p>
-						<p>
-							{' '}
-							All rights reserved! Information on the website is reported by our
-							members and is not a medical advice.
-						</p>
+						<p>© 2018-2021 MediPro. All rights reserved. </p>
 					</div>
 				</footer>
 			</div>

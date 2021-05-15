@@ -1,15 +1,20 @@
+.foot {
+	background-color: #191c27;
+}
+
 .link {
-	color: grey;
+	color: white;
 }
 
 .link:hover {
-	color: white;
+	color: #00d09c;
 	text-decoration: none;
 }
 
 .heading {
 	color: #d9d9d9;
 	font-weight: 500;
+	padding-top: 20px;
 }
 
 .img-css {
