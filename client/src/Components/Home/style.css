@@ -3,19 +3,20 @@
 	background-color: #e5faf5;
 }
 .buttonJoin {
-	display: block;
+	/* display: block; */
 
 	font-size: 24px;
-	padding: 12px;
-	/* margin: 20px; */
+	padding: 12px 50px;
 	border-radius: 5px;
-	/* width: 2rem; */
-	/* margin-top: 50px; */
-	position: absolute;
-	left: 20%;
-
 	text-decoration: none !important;
 }
+
+.buttonJoin:hover {
+	background-color: #00ae83;
+	transition: all 0.2s;
+	text-decoration: none !important;
+}
+
 .buttonJoinLight {
 	margin: auto;
 	background-color: #00d09c;
@@ -23,22 +24,18 @@
 	border: 2px solid #00d09c;
 	width: 50%;
 }
-/* .buttonJoinDark {
-	background-color: #007aff;
-	color: #ffffff;
-	margin: auto;
-	margin-top: 80px;
-} */
+
+.buttonJoinLight:hover{
+	color: #e5faf5;
+}
+
 .mainbtn {
 	text-align: center;
-	align-items: center;
-	align-content: center;
+	/* align-items: center;
+	align-content: center; */
 	/* margin-top: 5%; */
 }
-.mainBtn {
-	display: inline;
-	background-color: #00d09c;
-}
+
 .buttonJoin1 {
 	display: block;
 	font-weight: 800;
@@ -57,8 +54,17 @@
 	font-family: Roboto;
 	margin-top: 5em;
 	padding-right: 40%;
-	color: #032122;
+	/* color: #032122; */
 }
+
+.main-title-first{
+	color: #44475b;
+}
+
+.main-title-second{
+	color: #00d09c;
+}
+
 
 .lead {
 	font-size: 20px !important;
@@ -70,12 +76,6 @@
 }
 .lead-home {
 	color: #032122;
-}
-.buttonJoin:hover {
-	display: block;
-	font-size: 24px;
-	padding: 12px;
-	text-decoration: none !important;
 }
 .buttonJoin1:hover {
 	display: block;
@@ -119,10 +119,79 @@
 	padding-top: 20px;
 }
 
+.proud-patient {
+	text-transform: uppercase;
+	color: #00d09c;
+
+}
+
+.home-testimonials {
+	background-color: #e5faf5;
+	padding: 50px 0;
+	margin-top: 100px;
+}
+
+.feed-card {
+	background-color: white;
+	padding: 30px;
+	border-radius: 7px;
+	font-size: 17px;
+}
+
+.feed-card:hover {
+	cursor: pointer;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s;
+}
+
+.feed-card_header {
+	display: flex;
+	justify-content: center;
+}
+
+.feed-card_rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+
+	/* align-self: flex-end; */
+	/* justify-content: right; */
+	/* padding-left: 110px; */
+}
+
+.feed-card_icon {
+	width: 15px;
+	height: 15px;
+	margin: 0 10px;
+	color: gold;
+}
+
+.feed-card_name {
+	margin-top: 25px;
+	font-weight: 500;
+}
+
+.feed-card_content {
+	margin-top: 25px;
+	line-height: 1.75;
+	font-style: italic;
+}
+
+.feed-card_heading {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.feed-card_img {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+}
 @media only screen and (max-width: 1500px) {
 	.buttonJoin {
 		width: 500px;
-
 		text-decoration: none !important;
 	}
 	.mainbtn {

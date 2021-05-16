@@ -25,6 +25,7 @@
 
 .form-sign .btn {
 	margin: 2rem auto;
+	align-items: center;
 	font-size: 1rem;
 	border-radius: 10rem !important;
 	letter-spacing: 0.1rem;

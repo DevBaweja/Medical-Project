@@ -1,3 +1,10 @@
+.wwd-heading{
+	text-transform: uppercase;
+	color: #44475b;
+	letter-spacing: 2px;
+	font-weight: 500;
+}
+
 .wwdimg {
 	width: 23vw;
 	height: 23vh;

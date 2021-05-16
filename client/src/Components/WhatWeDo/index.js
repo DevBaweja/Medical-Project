@@ -44,8 +44,8 @@ class CardLayout extends Component {
 			// </div>
 
 			<div className="container">
-				<h2 className="text-center" style={{ marginTop: 70 }}>
-					What we Do?
+				<h2 className="text-center wwd-heading" style={{ marginTop: 70 }}>
+					Our Services
 				</h2>
 				<div className="row wwd-content">
 					<div className="col ">

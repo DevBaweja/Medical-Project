@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo1.png';
+//import Background from '../../Images/Home/bg.svg';
 import MainSvg from '../../Images/Home/med.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
 import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
+import { Container, Row, Col } from 'react-bootstrap';
 import { countpost } from '../../Api/Post';
 import { countuser } from '../../Api/User';
+import pp1 from '../../Images/pp1.png';
+import pp2 from '../../Images/pp2.jpg';
+import pp3 from '../../Images/pp3.jpg';
 
 class Home extends Component {
 	state = {
@@ -19,20 +23,6 @@ class Home extends Component {
 		postCount: 0,
 		userCount: 0,
 	};
-
-	componentDidMount() {
-		countpost().then(data => {
-			this.setState({
-				postCount: data.count,
-			});
-		});
-		countuser().then(data => {
-			this.setState({
-				userCount: data.count,
-			});
-		});
-	}
-
 	onSubscribe = e => {
 		e.preventDefault();
 		subscribe(this.state).then(res => {
@@ -49,6 +39,18 @@ class Home extends Component {
 			email: e.target.value,
 		});
 	};
+	componentDidMount() {
+		countpost().then(data => {
+			this.setState({
+				postCount: data.count,
+			});
+		});
+		countuser().then(data => {
+			this.setState({
+				userCount: data.count,
+			});
+		});
+	}
 
 	render() {
 		return (
@@ -76,7 +78,10 @@ class Home extends Component {
 												<div>
 													{/* <img src={logo} className="img-responsive" /> */}
 
-													<h2 className="main-title">MediPro</h2>
+													<h2 className="main-title">
+														<span className="main-title-first">Medi</span>
+														<span className="main-title-second">Pro</span>
+													</h2>
 												</div>
 
 												<div>
@@ -86,29 +91,12 @@ class Home extends Component {
 													</p>
 												</div>
 
-												<div className="row mainbtn">
-													<div className="mainBtn">
-														<Link to="/signup">
-															<button
-																type="button"
-																className="buttonJoin buttonJoinLight"
-															>
-																Get Started
-															</button>
-														</Link>
-													</div>
-
-													{/* <div className="mainBtn">
-														<Link to="/share_experience">
-															<button
-																type="button"
-																className="btn  buttonJoin buttonJoinDark float-left"
-															>
-																Ask Suggestion
-															</button>
-														</Link>
-													</div> */}
-												</div>
+												
+												<div className="mainbtn">
+													<Link to="/signup" className="buttonJoin buttonJoinLight">
+														Get Started
+													</Link>
+												</div>												
 											</div>
 										</Col>
 
@@ -129,11 +117,158 @@ class Home extends Component {
 						{isAuthenticated() ? null : (
 							<div>
 								<CardLayout />
-								<div>
-									<h2 className="text-center" style={{ marginTop: 100 }}>
-										What people say about our platform
+								<div className="home-testimonials">
+									<h2 className="text-center proud-patient">
+										Our Proud Patients
 									</h2>
-									<Testimonial slides={Testimonialdata} />
+
+									<div className="container pt-5 pb-5 ">
+										<div className="row">
+											<div className="col ">
+												<div className="feed-card">
+													<div className="feed-card_header">
+														<div className="feed-card_heading">
+															<img
+																src={pp1}
+																className="feed-card_img"
+																height="50px"
+																width="50px"
+															/>
+														</div>
+														<div className="feed-card_rating">
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+														</div>
+													</div>
+
+													<div className="feed-card_content">
+														"I researched other people who have gone
+														through the clinical trials I was going to
+														be doing, and I was able to make an informed
+														decision… You feel less alone on the site,
+														like you’re not the only one going through
+														this.
+													</div>
+
+													<div className="feed-card_name">LAURA</div>
+												</div>
+											</div>
+											<div className="col ">
+											<div className="feed-card">
+													<div className="feed-card_header">
+														<div className="feed-card_heading">
+															<img
+																src={pp1}
+																className="feed-card_img"
+																height="50px"
+																width="50px"
+															/>
+														</div>
+														<div className="feed-card_rating">
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+														</div>
+													</div>
+
+													<div className="feed-card_content">
+														"I researched other people who have gone
+														through the clinical trials I was going to
+														be doing, and I was able to make an informed
+														decision… You feel less alone on the site,
+														like you’re not the only one going through
+														this.
+													</div>
+
+													<div className="feed-card_name">LAURA</div>
+												</div>
+											</div>
+											<div className="col ">
+											<div className="feed-card">
+													<div className="feed-card_header">
+														<div className="feed-card_heading">
+															<img
+																src={pp1}
+																className="feed-card_img"
+																height="50px"
+																width="50px"
+															/>
+														</div>
+														<div className="feed-card_rating">
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+															<i
+																class="fa fa-star fa-lg feed-card_icon"
+																aria-hidden="true"
+															/>
+														</div>
+													</div>
+
+													<div className="feed-card_content">
+														"I researched other people who have gone
+														through the clinical trials I was going to
+														be doing, and I was able to make an informed
+														decision… You feel less alone on the site,
+														like you’re not the only one going through
+														this.
+													</div>
+
+													<div className="feed-card_name">LAURA</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									{/* <Testimonial slides={Testimonialdata} /> */}
 								</div>
 								<div className="sta row">
 									<div className="col-md-3">
