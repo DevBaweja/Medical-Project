@@ -1,3 +1,8 @@
+.nf-image {
+	width: 50vw;
+	height: auto;
+}
+
 .notFound {
 	color: #343a40;
 	max-height: 700px;
@@ -49,7 +54,7 @@
 	margin: 0 auto;
 	color: white;
 	text-decoration: none;
-	margin-right: 10px
+	margin-right: 10px;
 }
 
 .not_btn:hover {
@@ -63,5 +68,5 @@
 	margin: 0 auto;
 	color: white;
 	text-decoration: none;
-	margin-right: 10px
+	margin-right: 10px;
 }
