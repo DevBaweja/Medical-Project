@@ -270,7 +270,7 @@ class Home extends Component {
 
 									{/* <Testimonial slides={Testimonialdata} /> */}
 								</div>
-								<div className="sta row">
+								{/* <div className="sta row">
 									<div className="col-md-3">
 										<div className="card shadow p-3 mb-5 bg-white rounded">
 											<div className="card-body">
@@ -329,54 +329,40 @@ class Home extends Component {
 											Become a Member
 										</button>
 									</Link>
-								</div>
+								</div> */}
 
-								<form
-									className="container form-inline news-letter d-flex flex-column"
-									onSubmit={this.onSubscribe}
-								>
-									<div>
-										<h2 className="newletter">
-											Subscribe to our Newsletter for latest posts
-										</h2>
-										<h4 className="news-letter-subheading">
-											You will recieve email notifications for all our new
-											posts.
-										</h4>
+								<div className= "row">
+									<div className= "col">
+										<div className = "newsletter">
+											<div className= "subscribe-us">
+												<div className= "subscribe-us_title">
+													Subscribe Us
+												</div>
+												<div className= "subscribe-us_content">
+													<div className= "subscribe-us_para-1">We’re taking complicated stuff and making it super simple. Our teams are full of smart and savvy folks working on challenging tasks.
+													</div>
+													<div className= "subscribe-us_para-2">We’re taking complicated stuff and making it super simple. Our teams are full of smart and savvy folks working on challenging tasks.
+													</div>
+												</div>
+
+												<div className= "subscribe-us_form">
+													
+													<input type="email" className="subscribe-us_input" placeholder="Email address"  required="" />
+													{/* <label for="email" className="subscribe-us_label">Email address</label> */}
+													<button type= "submit" className= "subscribe-us_submit">Subscribe</button>
+												</div>
+											</div>
+											<div className= "newsletter-img">
+
+											</div>
+										</div>
 									</div>
-									<div className="subscribe-div">
-										<label class="sr-only" for="inlineFormInputName2">
-											Name
-										</label>
-										<input
-											type="email"
-											required-pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-											value={this.state.email}
-											onChange={this.onChange}
-											class="form-control"
-											id="inlineFormInputName2"
-											placeholder="Email"
-											style={{
-												width: '20em',
-												border: '2px solid rgba(0,0,0,0.25)',
-												fontSize: '16px',
-											}}
-										/>
-										{/* <p></p> */}
-										<button
-											type="submit"
-											class="btn btn-outline-primary"
-											style={{
-												marginLeft: '20px',
-												border: '3px solid #007bff',
-												width: '6rem',
-												fontSize: '14px',
-											}}
-										>
-											Subscribe
-										</button>
-									</div>
-								</form>
+								</div>
+				
+							
+
+								
+								
 							</div>
 						)}
 					</div>

@@ -49,7 +49,7 @@ class CardLayout extends Component {
 				</h2>
 				<div className="row wwd-content">
 					<div className="col ">
-						<h3 className="text-center">Social Interactions</h3>
+						<h3 className="text-center wwd-subheading">Social Interactions</h3>
 						<p>
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
 							fringilla mauris elementum, aliquet velit nec, placerat tellus. Orci
@@ -67,7 +67,7 @@ class CardLayout extends Component {
 						<img src={reviews} className="wwdimg" />
 					</div>
 					<div className="col ">
-						<h3 className="text-center">Collecting Testimonials</h3>
+						<h3 className="text-center wwd-subheading">Collecting Testimonials</h3>
 						<p>
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
 							fringilla mauris elementum, aliquet velit nec, placerat tellus. Orci
@@ -79,7 +79,7 @@ class CardLayout extends Component {
 				</div>
 				<div className="row wwd-content">
 					<div className="col ">
-						<h3 className="text-center">Good Doctors/Clinics</h3>
+						<h3 className="text-center wwd-subheading">Good Doctors/Clinics</h3>
 						<p>
 							'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
 							fringilla mauris elementum, aliquet velit nec, placerat tellus. Orci
