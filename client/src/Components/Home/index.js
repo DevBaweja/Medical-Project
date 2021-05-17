@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './style.css';
 import CardLayout from '../WhatWeDo';
 import logo from '../../Images/logo1.png';
-//import Background from '../../Images/Home/bg.svg';
 import MainSvg from '../../Images/Home/med.svg';
 
 import Testimonial from '../ContactUs/Testimonial';
@@ -13,6 +12,7 @@ import { isAuthenticated } from '../../Api/';
 import { Container, Row, Col } from 'react-bootstrap';
 import { countpost } from '../../Api/Post';
 import { countuser } from '../../Api/User';
+import newsletter from '../../Images/Home/newsletter.svg';
 import pp1 from '../../Images/pp1.png';
 import pp2 from '../../Images/pp2.jpg';
 import pp3 from '../../Images/pp3.jpg';
@@ -79,8 +79,12 @@ class Home extends Component {
 													{/* <img src={logo} className="img-responsive" /> */}
 
 													<h2 className="main-title">
-														<span className="main-title-first">Medi</span>
-														<span className="main-title-second">Pro</span>
+														<span className="main-title-first">
+															Medi
+														</span>
+														<span className="main-title-second">
+															Pro
+														</span>
 													</h2>
 												</div>
 
@@ -91,12 +95,14 @@ class Home extends Component {
 													</p>
 												</div>
 
-												
 												<div className="mainbtn">
-													<Link to="/signup" className="buttonJoin buttonJoinLight">
+													<Link
+														to="/signup"
+														className="buttonJoin buttonJoinLight"
+													>
 														Get Started
 													</Link>
-												</div>												
+												</div>
 											</div>
 										</Col>
 
@@ -172,11 +178,12 @@ class Home extends Component {
 												</div>
 											</div>
 											<div className="col ">
-											<div className="feed-card">
+												<div className="feed-card">
 													<div className="feed-card_header">
 														<div className="feed-card_heading">
 															<img
 																src={pp1}
+																alt=""
 																className="feed-card_img"
 																height="50px"
 																width="50px"
@@ -219,11 +226,12 @@ class Home extends Component {
 												</div>
 											</div>
 											<div className="col ">
-											<div className="feed-card">
+												<div className="feed-card">
 													<div className="feed-card_header">
 														<div className="feed-card_heading">
 															<img
 																src={pp1}
+																alt=""
 																className="feed-card_img"
 																height="50px"
 																width="50px"
@@ -331,38 +339,41 @@ class Home extends Component {
 									</Link>
 								</div> */}
 
-								<div className= "row">
-									<div className= "col">
-										<div className = "newsletter">
-											<div className= "subscribe-us">
-												<div className= "subscribe-us_title">
-													Subscribe Us
-												</div>
-												<div className= "subscribe-us_content">
-													<div className= "subscribe-us_para-1">We’re taking complicated stuff and making it super simple. Our teams are full of smart and savvy folks working on challenging tasks.
-													</div>
-													<div className= "subscribe-us_para-2">We’re taking complicated stuff and making it super simple. Our teams are full of smart and savvy folks working on challenging tasks.
-													</div>
-												</div>
-
-												<div className= "subscribe-us_form">
-													
-													<input type="email" className="subscribe-us_input" placeholder="Email address"  required="" />
-													{/* <label for="email" className="subscribe-us_label">Email address</label> */}
-													<button type= "submit" className= "subscribe-us_submit">Subscribe</button>
-												</div>
+								<div className="newsletter container">
+									<div className="subscribe-us">
+										<div className="subscribe-us_title">Subscribe Us</div>
+										<div className="subscribe-us_content">
+											<div className="subscribe-us_para-1">
+												We’re taking complicated stuff and making it super
+												simple. Our teams are full of smart and savvy folks
+												working on challenging tasks.
 											</div>
-											<div className= "newsletter-img">
-
+											<div className="subscribe-us_para-2">
+												We’re taking complicated stuff and making it super
+												simple. Our teams are full of smart and savvy folks
+												working on challenging tasks.
 											</div>
 										</div>
-									</div>
-								</div>
-				
-							
 
-								
-								
+										<div className="subscribe-us_form">
+											<input
+												id="email"
+												type="email"
+												className="subscribe-us_input"
+												placeholder="Email address"
+												required=""
+											/>
+											<button type="submit" className="subscribe-us_submit">
+												Subscribe
+											</button>
+										</div>
+									</div>
+									<img
+										src={newsletter}
+										alt=""
+										className="img-responsive newsletter-img"
+									/>
+								</div>
 							</div>
 						)}
 					</div>
