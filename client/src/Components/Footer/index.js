@@ -30,17 +30,17 @@ class Footer extends Component {
 								<h5 className="mt-3 mb-4 heading">FEATURES</h5>
 								<ul className="list-unstyled">
 									<li>
-										<Link className="link" to="/posts">
+										<Link className="link" href="/posts" to="/posts">
 											Posts
 										</Link>
 									</li>
 									<li>
-										<Link className="link" to="/signin">
+										<Link className="link" href="/signin" to="/signin">
 											Ask Suggestion
 										</Link>
 									</li>
 									<li>
-										<Link className="link" to="/signin">
+										<Link className="link" href="/signin" to="/signin">
 											Share Experience
 										</Link>
 									</li>

@@ -34,8 +34,11 @@ class ContactUs extends Component {
 	queryForm = () => (
 		<form onSubmit={this.onFormSubmit}>
 			<div className="form-group">
-				<label className="font-weight-bold">Name</label>
+				<label className="font-weight-bold" htmlFor="name">
+					Name
+				</label>
 				<input
+					id="name"
 					onChange={this.onChange}
 					name="name"
 					value={this.state.name}

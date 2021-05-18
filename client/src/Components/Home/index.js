@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
 import './style.css';
-import CardLayout from '../WhatWeDo';
-import logo from '../../Images/logo1.png';
-import MainSvg from '../../Images/Home/med.svg';
 
+import CardLayout from '../WhatWeDo';
 import Testimonial from '../ContactUs/Testimonial';
 import Testimonialdata from '../../Data/Testimonial_data';
 import { subscribe } from '../../Api/Subscribe';
 import { isAuthenticated } from '../../Api/';
-import { Container, Row, Col } from 'react-bootstrap';
 import { countpost } from '../../Api/Post';
 import { countuser } from '../../Api/User';
 import newsletter from '../../Images/Home/newsletter.svg';
+import logo from '../../Images/logo1.png';
+import MainSvg from '../../Images/Home/med.svg';
 import pp1 from '../../Images/pp1.png';
 import pp2 from '../../Images/pp2.jpg';
 import pp3 from '../../Images/pp3.jpg';
@@ -23,6 +23,20 @@ class Home extends Component {
 		postCount: 0,
 		userCount: 0,
 	};
+
+	componentDidMount() {
+		countpost().then(data => {
+			this.setState({
+				postCount: data.count,
+			});
+		});
+		countuser().then(data => {
+			this.setState({
+				userCount: data.count,
+			});
+		});
+	}
+
 	onSubscribe = e => {
 		e.preventDefault();
 		subscribe(this.state).then(res => {
@@ -39,26 +53,14 @@ class Home extends Component {
 			email: e.target.value,
 		});
 	};
-	componentDidMount() {
-		countpost().then(data => {
-			this.setState({
-				postCount: data.count,
-			});
-		});
-		countuser().then(data => {
-			this.setState({
-				userCount: data.count,
-			});
-		});
-	}
 
 	render() {
 		return (
-			<div style={isAuthenticated() ? { minHeight: '88vh' } : { minHeight: '2650px' }}>
+			<div style={{ minHeight: '2750px' }}>
 				<div className={isAuthenticated() ? 'dummyclass' : 'mobile'}>
 					<div
 						style={{
-							//backgroundImage: `url(${Background})`,
+							// backgroundImage: `url(${Background})`,
 							// backgroundColor: 'white',
 							// flex: '1',
 							// alignSelf: 'stretch',
@@ -97,6 +99,7 @@ class Home extends Component {
 
 												<div className="mainbtn">
 													<Link
+														href="/signup"
 														to="/signup"
 														className="buttonJoin buttonJoinLight"
 													>
@@ -136,6 +139,7 @@ class Home extends Component {
 														<div className="feed-card_heading">
 															<img
 																src={pp1}
+																alt=""
 																className="feed-card_img"
 																height="50px"
 																width="50px"
@@ -143,23 +147,23 @@ class Home extends Component {
 														</div>
 														<div className="feed-card_rating">
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 														</div>
@@ -191,23 +195,23 @@ class Home extends Component {
 														</div>
 														<div className="feed-card_rating">
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 														</div>
@@ -239,23 +243,23 @@ class Home extends Component {
 														</div>
 														<div className="feed-card_rating">
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 															<i
-																class="fa fa-star fa-lg feed-card_icon"
+																className="fa fa-star fa-lg feed-card_icon"
 																aria-hidden="true"
 															/>
 														</div>
