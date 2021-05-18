@@ -15,6 +15,7 @@ import postsvg from '../../Images/Home/post.svg';
 import membersvg from '../../Images/Home/member.svg';
 import pathysvg from '../../Images/Home/pathy.svg';
 import diseasesvg from '../../Images/Home/disease.svg';
+import datasvg from '../../Images/Home/data.svg';
 import logo from '../../Images/logo1.png';
 import MainSvg from '../../Images/Home/med.svg';
 import pp1 from '../../Images/pp1.png';
@@ -293,10 +294,11 @@ class Home extends Component {
 								</div>
 								
 
-								<div className= "container">
+								<div className= "container about-stats">
+									<div className= "about-title">Stats for nerds</div>
 									<div className= "row about">
 										<div className= "col about-svg">
-											svg
+											<img src={datasvg} className= "about-img" ></img>
 										</div>
 										<div className= "col about-data">
 											<div className= "row">
