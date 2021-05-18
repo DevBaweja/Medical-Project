@@ -27,3 +27,8 @@ Search Bar - Counter
 Exporting multiple lines
 Using previous state
 Async state errors
+
+Groww green background - #e5faf5
+Groww green button - #00d09c
+Groww blue footer  - #191c27
+Groww blue background - #5367ff
