@@ -11,6 +11,10 @@ import { isAuthenticated } from '../../Api/';
 import { countpost } from '../../Api/Post';
 import { countuser } from '../../Api/User';
 import newsletter from '../../Images/Home/newsletter.svg';
+import postsvg from '../../Images/Home/post.svg';
+import membersvg from '../../Images/Home/member.svg';
+import pathysvg from '../../Images/Home/pathy.svg';
+import diseasesvg from '../../Images/Home/disease.svg';
 import logo from '../../Images/logo1.png';
 import MainSvg from '../../Images/Home/med.svg';
 import pp1 from '../../Images/pp1.png';
@@ -297,21 +301,21 @@ class Home extends Component {
 										<div className= "col about-data">
 											<div className= "row">
 												<div className= "col about-data_card">
-													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<img src= {membersvg} className="about-data_card-img" ></img>
 													<span className= "about-data_card-content">100K+ Members</span>
 												</div>
 												<div className= "col about-data_card">
-													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<img src= {postsvg} className="about-data_card-img" ></img>
 													<span className= "about-data_card-content">1000+ Posts</span>
 												</div>
 											</div>
 											<div className= "row about-data">
 												<div className= "col about-data_card">
-													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<img src= {diseasesvg} className="about-data_card-img" ></img>
 													<span className= "about-data_card-content">100+ Diseases</span>
 												</div>
 												<div className= "col about-data_card">
-													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<img src= {pathysvg} className="about-data_card-img" ></img>
 													<span className= "about-data_card-content">80+ Pathy</span>
 												</div>
 											</div>

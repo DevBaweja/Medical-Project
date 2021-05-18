@@ -226,8 +226,10 @@
 	flex-direction: column;
 }
 
-.about-data_card-icon{
-	color: #5367ff;
+.about-data_card-img{
+	filter: invert(60%) sepia(99%) saturate(3795%) hue-rotate(133deg) brightness(92%) contrast(102%);
+	width: 60px;
+	height: auto;
 	margin-bottom: 50px;
 }
 
