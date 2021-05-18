@@ -112,6 +112,131 @@
 	border-top: 3px solid rgba(0, 0, 0, 0.25);
 	padding-top: 100px !important;
 }
+
+.home-testimonials_header{
+	display: flex;
+}
+
+.proud-patient {
+	font-size: 32px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #44475b;
+	flex: 1;
+}
+
+.home-testimonials_see-more{
+	align-self: flex-end;
+	color: #00ae83;
+	border-bottom: 2px solid transparent;
+	transition: all 0.2s;
+}
+
+.home-testimonials_see-more:hover{
+	text-decoration: none;
+	color: #00ae83;
+	border-bottom: 2px solid #00ae83;
+}
+
+.home-testimonials {
+	background-color: #f6f6f7;
+	padding: 50px 0;
+	margin-top: 100px;
+}
+
+.feed-card {
+	background-color: white;
+	padding: 30px;
+	border-radius: 7px;
+	font-size: 17px;
+}
+
+.feed-card:hover {
+	cursor: pointer;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s;
+}
+
+.feed-card_header {
+	display: flex;
+	justify-content: center;
+}
+
+.feed-card_rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+	
+	/* align-self: flex-end; */
+	/* justify-content: right; */
+	/* padding-left: 110px; */
+}
+
+.feed-card_icon {
+	width: 15px;
+	height: 15px;
+	margin: 0 10px;
+	color: gold;
+}
+
+.feed-card_name {
+	margin-top: 25px;
+	font-weight: 500;
+}
+
+.feed-card_content {
+	margin-top: 25px;
+	line-height: 1.75;
+	font-style: italic;
+}
+
+.feed-card_heading {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+}
+
+.feed-card_img {
+	border-radius: 50%;
+	height: 50px;
+	width: 50px;
+}
+@media only screen and (max-width: 1500px) {
+	.buttonJoin {
+		width: 500px;
+		text-decoration: none !important;
+	}
+	.mainbtn {
+		margin-top: 100px;
+	}
+}
+
+.about{
+	margin: 60px 0;
+	margin-bottom: 120px;
+}
+.about-data_card{
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	margin: 20px;
+	padding: 30px 30px !important;
+	/* padding-left: 50px !important; */
+	display: flex;
+	flex-direction: column;
+}
+
+.about-data_card-icon{
+	color: #5367ff;
+	margin-bottom: 50px;
+}
+
+.about-data_card-content{
+	font-size: 20px;
+	font-weight: 500;
+
+}
+
 .newsletter {
 	position: relative;
 	padding: 60px 30px;
@@ -206,85 +331,6 @@
 
 .subscribe-us_submit:focus {
 	outline: none;
-}
-
-.proud-patient {
-	text-transform: uppercase;
-	color: #00d09c;
-}
-
-.home-testimonials {
-	background-color: #e5faf5;
-	padding: 50px 0;
-	margin-top: 100px;
-}
-
-.feed-card {
-	background-color: white;
-	padding: 30px;
-	border-radius: 7px;
-	font-size: 17px;
-}
-
-.feed-card:hover {
-	cursor: pointer;
-	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-	transition: all 0.2s;
-}
-
-.feed-card_header {
-	display: flex;
-	justify-content: center;
-}
-
-.feed-card_rating {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex: 1;
-
-	/* align-self: flex-end; */
-	/* justify-content: right; */
-	/* padding-left: 110px; */
-}
-
-.feed-card_icon {
-	width: 15px;
-	height: 15px;
-	margin: 0 10px;
-	color: gold;
-}
-
-.feed-card_name {
-	margin-top: 25px;
-	font-weight: 500;
-}
-
-.feed-card_content {
-	margin-top: 25px;
-	line-height: 1.75;
-	font-style: italic;
-}
-
-.feed-card_heading {
-	height: 50px;
-	width: 50px;
-	border-radius: 50%;
-}
-
-.feed-card_img {
-	border-radius: 50%;
-	height: 50px;
-	width: 50px;
-}
-@media only screen and (max-width: 1500px) {
-	.buttonJoin {
-		width: 500px;
-		text-decoration: none !important;
-	}
-	.mainbtn {
-		margin-top: 100px;
-	}
 }
 
 @media only screen and (max-width: 1200px) {

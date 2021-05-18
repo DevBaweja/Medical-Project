@@ -56,7 +56,7 @@ class Home extends Component {
 
 	render() {
 		return (
-			<div style={{ minHeight: '2750px' }}>
+			<div style={{ minHeight: '3500px' }}>
 				<div className={isAuthenticated() ? 'dummyclass' : 'mobile'}>
 					<div
 						style={{
@@ -127,9 +127,14 @@ class Home extends Component {
 							<div>
 								<CardLayout />
 								<div className="home-testimonials">
-									<h2 className="text-center proud-patient">
-										Our Proud Patients
-									</h2>
+									<div className= "home-testimonials_header container">
+										<span className="proud-patient">
+											Our Proud Patients
+										</span>
+										<a href= "/feedback" className= "home-testimonials_see-more">
+											View More &rarr; 
+										</a>
+									</div>
 
 									<div className="container pt-5 pb-5 ">
 										<div className="row">
@@ -282,66 +287,37 @@ class Home extends Component {
 
 									{/* <Testimonial slides={Testimonialdata} /> */}
 								</div>
-								{/* <div className="sta row">
-									<div className="col-md-3">
-										<div className="card shadow p-3 mb-5 bg-white rounded">
-											<div className="card-body">
-												<h5 className="card-title text-center font-weight-bold">
-													{this.state.userCount}
-												</h5>
-												<p className="card-text text-center">
-													No. of Members
-												</p>
-											</div>
+								
+
+								<div className= "container">
+									<div className= "row about">
+										<div className= "col about-svg">
+											svg
 										</div>
-									</div>
-									<div className="col-md-3">
-										<div className="card shadow p-3 mb-5 bg-white rounded">
-											<div className="card-body">
-												<h5 className="card-title text-center font-weight-bold">
-													{this.state.postCount}
-												</h5>
-												<p className="card-text text-center">
-													No. of Posts
-												</p>
+										<div className= "col about-data">
+											<div className= "row">
+												<div className= "col about-data_card">
+													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<span className= "about-data_card-content">100K+ Members</span>
+												</div>
+												<div className= "col about-data_card">
+													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<span className= "about-data_card-content">1000+ Posts</span>
+												</div>
 											</div>
-										</div>
-									</div>
-									<div className="col-md-3">
-										<div className="card shadow p-3 mb-5 bg-white rounded">
-											<div className="card-body">
-												<h5 className="card-title text-center font-weight-bold">
-													100+
-												</h5>
-												<p className="card-text text-center">
-													No. of Disease
-												</p>
-											</div>
-										</div>
-									</div>
-									<div className="col-md-3">
-										<div className="card shadow p-3 mb-5 bg-white rounded">
-											<div className="card-body">
-												<h5 className="card-title text-center font-weight-bold">
-													80+
-												</h5>
-												<p className="card-text text-center">
-													No. of Pathy
-												</p>
+											<div className= "row about-data">
+												<div className= "col about-data_card">
+													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<span className= "about-data_card-content">100+ Diseases</span>
+												</div>
+												<div className= "col about-data_card">
+													<i class="fa fa-clipboard fa-2x about-data_card-icon" aria-hidden="true"></i>
+													<span className= "about-data_card-content">80+ Pathy</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div className="container text-center">
-									<Link to="/Signup">
-										<button
-											type="button"
-											className="btn btn-primary buttonJoin1"
-										>
-											Become a Member
-										</button>
-									</Link>
-								</div> */}
 
 								<div className="newsletter container">
 									<div className="subscribe-us">
