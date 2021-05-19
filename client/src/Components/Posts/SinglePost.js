@@ -5,7 +5,7 @@ import Disqus from 'disqus-react';
 import { singlePost, remove, like, unlike } from '../../Api/Post';
 import DefaultPost from '../../Images/mountains.jpg';
 import { isAuthenticated } from '../../Api';
-import { serverUrl } from '../variables';
+import { serverUrl } from '../../variables';
 
 class SinglePost extends Component {
 	state = {
@@ -208,7 +208,6 @@ class SinglePost extends Component {
 							onError={i => (i.target.src = `${DefaultPost}`)}
 							className="img-thunbnail mb-3"
 							style={{
-								
 								width: '100%',
 								objectFit: 'cover',
 							}}

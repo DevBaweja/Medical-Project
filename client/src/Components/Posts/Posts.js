@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Pagination } from 'react-bootstrap';
 import { list, countpost } from '../../Api/Post';
 import DefaultPost from '../../Images/mountains.jpg';
-import { serverUrl } from '../variables';
+import { serverUrl } from '../../variables';
 
 import './style.css';
 // import { isAuthenticated } from '../../Api';

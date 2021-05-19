@@ -10,7 +10,7 @@ import DefaultProfile from '../../Images/avatar.png';
 import FollowProfileButton from '../Users/FollowProfileButton';
 import ProfileTabs from './ProfileTabs';
 import DeleteUser from '../Users/deleteUser';
-import { serverUrl } from '../variables';
+import { serverUrl } from '../../variables';
 
 class Profile extends react.Component {
 	constructor() {

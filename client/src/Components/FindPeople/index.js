@@ -4,7 +4,7 @@ import { findPeople, follow } from '../../Api/User';
 import DefaultProfile from '../../Images/avatar.png';
 import './style.css';
 import { isAuthenticated } from '../../Api';
-import {serverUrl} from '../variables';
+import { serverUrl } from '../../variables';
 
 class FindPeople extends Component {
 	constructor() {

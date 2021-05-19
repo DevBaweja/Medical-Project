@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { isAuthenticated } from '../../Api';
 import { create } from '../../Api/Post';
 import loader from '../../Images/loader2.gif';
-import { serverUrl } from '../variables';
+import { serverUrl } from '../../variables';
 
 import { Multiselect } from 'multiselect-react-dropdown';
 // import imageToBase64 from 'image-to-base64';
@@ -15,7 +15,14 @@ class NewPost extends Component {
 			title: '',
 			body: '',
 			description: '',
-			plainArray: ['Acidity', 'Asthama', 'Breast Cancer', 'Diabetes','Joint Pain', 'Psoriasis'],
+			plainArray: [
+				'Acidity',
+				'Asthama',
+				'Breast Cancer',
+				'Diabetes',
+				'Joint Pain',
+				'Psoriasis',
+			],
 			selectedValues: [],
 			treatmentTaken: '',
 			photo: '',
@@ -168,7 +175,7 @@ class NewPost extends Component {
 					type="text"
 					className="form-control"
 					value={title}
-					placeholder= "Give your post a title"
+					placeholder="Give your post a title"
 				/>
 			</div>
 			<div className="form-group">
@@ -178,7 +185,7 @@ class NewPost extends Component {
 					type="text"
 					className="form-control"
 					value={description}
-					placeholder= "Add a bit summary of your experience"
+					placeholder="Add a bit summary of your experience"
 				/>
 			</div>
 
@@ -189,8 +196,8 @@ class NewPost extends Component {
 				onSelect={this.getSelectedValues}
 				showCheckbox={true}
 				closeOnSelect={false}
-				placeholder= "Select disease name"
-				label= "Disease Name"
+				placeholder="Select disease name"
+				label="Disease Name"
 			/>
 			<div className="form-group">
 				<label className="text-muted">Add Custom Disease Name</label>
@@ -200,7 +207,7 @@ class NewPost extends Component {
 					className="form-control"
 					onKeyPress={this.addTag}
 					value={customTag}
-					placeholder= "Add disease name manually"
+					placeholder="Add disease name manually"
 				/>
 			</div>
 
@@ -211,7 +218,7 @@ class NewPost extends Component {
 					type="text"
 					className="form-control"
 					value={treatmentTaken}
-					placeholder= "Describe the treatment you have taken"
+					placeholder="Describe the treatment you have taken"
 				/>
 			</div>
 
@@ -222,7 +229,7 @@ class NewPost extends Component {
 					type="text"
 					className="form-control"
 					value={body}
-					placeholder= "Add additional details of your experience"
+					placeholder="Add additional details of your experience"
 				/>
 			</div>
 
