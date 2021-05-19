@@ -76,55 +76,40 @@ class Home extends Component {
 							top: '0',
 						}}
 					>
-						<div className="container-fluid section1" style={{ minHeight: '50px' }}>
-							<div className="text-white text-center jbtron">
-								<Container fluid>
-									<Row>
-										<Col md={6} sm={12}>
-											<div style={{ paddingTop: '1em' }}>
-												<div>
-													{/* <img src={logo} className="img-responsive" /> */}
-
-													<h2 className="main-title">
-														<span className="main-title-first">
-															Medi
-														</span>
-														<span className="main-title-second">
-															Pro
-														</span>
-													</h2>
+						<div className= "home-start">
+							<div className= "container">
+								<div className= "row">
+									<div className= "col">
+										<div className= "q">
+											<div className= "main-top">
+												<div className= "main-title">
+													<span className= "main-title_first">
+														Medi
+													</span>
+													<span className= "main-title_second">
+														Pro
+													</span>
 												</div>
-
-												<div>
-													<p className="lead lead-home">
+												<div className= "main-heading">
 														Making a meaningful difference in patients’
-														lives
-													</p>
-												</div>
-
-												<div className="mainbtn">
-													<Link
-														href="/signup"
-														to="/signup"
-														className="buttonJoin buttonJoinLight"
-													>
-														Get Started
-													</Link>
+														lives, experience of common man help each other.
 												</div>
 											</div>
-										</Col>
 
-										<Col md={6} sm={12}>
-											<img
-												src={MainSvg}
-												className="img-responsive centre-logo"
-												// width="100%"
-												// height="auto"
-												alt="logo"
-											/>
-										</Col>
-									</Row>
-								</Container>
+										</div>
+										<div>
+											<a href= "/signup" className= "buttonJoin buttonJoinLight">
+												Get Started
+											</a>
+										</div>
+									</div>
+									<div className= "col main-svg">
+										<img
+											src={MainSvg}
+											className= "main-svg_svg"												
+										/>
+									</div>
+								</div>
 							</div>
 						</div>
 
