@@ -295,7 +295,7 @@ class Home extends Component {
 								
 
 								<div className= "container about-stats">
-									<div className= "about-title">Stats for nerds</div>
+									<div className= "about-title text-center">Stats for nerds</div>
 									<div className= "row about">
 										<div className= "col about-svg">
 											<img src={datasvg} className= "about-img" ></img>
