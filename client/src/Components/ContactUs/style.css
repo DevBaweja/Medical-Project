@@ -1,3 +1,38 @@
+.contact-head-heading {
+	text-transform: uppercase;
+	margin-top: 40%;
+	letter-spacing: 2px;
+	color: #44475b;
+}
+.contact-head-svg {
+	width: 650px;
+	margin-top: 30%;
+	/* background-color: #e5faf5; */
+}
+.contact-head-desc {
+	margin-right: 100px;
+	line-height: 2;
+	padding-top: 20px;
+	color: #44475b;
+}
+
+.contact-map-embed {
+	margin-top: 100px;
+	width: 1000px;
+	height: 600px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+	margin-top: 100px;
+}
+.contact-details-heading {
+	text-transform: uppercase;
+}
+.contact-details-desc {
+	border-radius: 10px;
+	padding: 30px;
+}
 ul {
 	padding: 0;
 	margin: 0;

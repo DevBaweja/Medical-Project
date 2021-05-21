@@ -32,3 +32,5 @@ Groww green background - #e5faf5
 Groww green button - #00d09c
 Groww blue footer  - #191c27
 Groww blue background - #5367ff
+Groww grey font - #44475b
+Groww grey background - #ecedef
