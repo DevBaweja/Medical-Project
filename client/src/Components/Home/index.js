@@ -113,13 +113,13 @@ class Home extends Component {
 							</div>
 						</div>
 
-						{isAuthenticated() ? null : (
+						
 							<div>
 								<CardLayout />
 								<div className="home-testimonials">
 									<div className= "home-testimonials_header container">
 										<span className="proud-patient">
-											Our Proud Patients
+											Our Proud Users
 										</span>
 										<a href= "/feedback" className= "home-testimonials_see-more">
 											View More &rarr; 
@@ -310,7 +310,7 @@ class Home extends Component {
 									</div>
 								</div>
 
-								<div className="newsletter container">
+								<div className="newsletter newsletter-img container" style= {{backgroundImage: `url(${newsletter})`}}>
 									<div className="subscribe-us">
 										<div className="subscribe-us_title">Subscribe Us</div>
 										<div className="subscribe-us_content">
@@ -339,14 +339,14 @@ class Home extends Component {
 											</button>
 										</div>
 									</div>
-									<img
+									{/* <img
 										src={newsletter}
 										alt=""
 										className="img-responsive newsletter-img"
-									/>
+									/> */}
 								</div>
 							</div>
-						)}
+						
 					</div>
 				</div>
 			</div>

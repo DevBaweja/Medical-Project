@@ -8,7 +8,7 @@ class Footer extends Component {
 	render() {
 		return (
 			<div>
-				<footer className=" foot text-white mt-4">
+				<footer className=" foot text-white">
 					<div className="container text-center text-md-left">
 						<div className="row">
 							<hr className="clearfix w-100 d-md-none" />

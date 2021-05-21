@@ -239,7 +239,6 @@
 	border-radius: 10px;
 	margin: 20px;
 	padding: 30px 30px !important;
-	/* padding-left: 50px !important; */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -263,27 +262,24 @@
 	padding: 60px 30px;
 	padding-bottom: 80px;
 	margin: 50px auto;
-
 	background-color: #5367ff;
 	color: #fff;
 	border-radius: 50px;
 }
 
-.newsletter-img {
-	position: absolute;
-	right: 40px;
-	bottom: 60px;
-	width: 375px;
-	/* z-index: -1; */
+.newsletter-img{
+	background-size: 40% auto;
+	background-position: 95% 50%;
+	background-repeat: no-repeat;
 }
 
 .subscribe-us {
 	width: 560px;
 	display: flex;
 	flex-direction: column;
-	/* align-items: ; */
 	align-items: flex-start;
 	margin: 0 80px;
+	/* margin-bottom: 50px; */
 }
 
 .subscribe-us_title {
