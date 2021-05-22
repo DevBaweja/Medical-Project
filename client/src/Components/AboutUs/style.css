@@ -16,14 +16,13 @@
 }
 
 .about-us_title{
-	padding-top: 90px;
+	padding-top: 120px;
 }
 
 .motto{
 	font-size: 50px;
 	font-weight: 500;
 	letter-spacing: 1.5px;
-	line-height: 60px;
 	color: #44475b;
 }
 
@@ -69,6 +68,44 @@
 	margin-bottom: 25px;
 	line-height: 26px;
 	letter-spacing: 0.6px;
+}
+
+.efy{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.efy-box{
+	margin-bottom: 80px;
+}
+
+.efy-title{
+	font-size: 32px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #44475b;
+	flex: 1;
+	letter-spacing: 2px;
+	margin: 80px 0 100px 0;
+}
+
+.efy-content{
+	padding: 20px 80px 0 80px !important ;
+}
+
+.efy-heading{
+	font-size: 20px;
+	font-weight: 500;
+	text-transform: uppercase;
+	color: #44475b;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+}
+
+.efy-svg_svg{
+	width: 23vw;
 }
 
 
