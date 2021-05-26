@@ -210,7 +210,7 @@ class Signup extends Component {
 									</div>
 
 									<button
-										className="btn btn-lg btn-primary text-uppercase signBtn"
+										className="btn btn-lg btn-primary signBtn"
 										type="submit"
 										onClick={this.clickSubmit}
 									>
