@@ -32,6 +32,10 @@
 	justify-content: center;
 }
 
+.faq__icon--reveal {
+	transform: rotate(180deg);
+}
+
 .faq__content {
 	font-size: 16px;
 	/* background-color: rgb(248 , 246, 245); */

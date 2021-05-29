@@ -16,7 +16,9 @@ dotenv.config();
 
 // db
 // MONGO_URI=mongodb://localhost/nodeapi
-mongoose.connect(config.mongoUrl, { useNewUrlParser: true }).then(() => console.log('DB Connected'));
+mongoose
+    .connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('DB Connected'));
 
 mongoose.connection.on('error', err => {
     console.log(`DB connection error: ${err.message}`);

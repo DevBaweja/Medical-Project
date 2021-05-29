@@ -1,17 +1,15 @@
-import { serverUrl } from '../variables';
 import axios from 'axios';
+import { serverUrl } from '../variables';
 
-export const submitQuery = (data) => {
-	return axios({
-		method: 'post',
-		url: `${serverUrl}/api/submit_query`,
-		data: data
-	})
-		.then(function(response) {
-			console.log(response);
-			return response;
-		})
-		.catch(function(error) {
-			return error;
+export default async (name, email, query) => {
+	try {
+		const response = await axios({
+			method: 'post',
+			url: `${serverUrl}/api/submit_query`,
+			data: { name, email, query },
 		});
+		return response;
+	} catch (err) {
+		return err;
+	}
 };

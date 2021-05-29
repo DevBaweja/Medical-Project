@@ -1,3 +1,7 @@
+.nav-link {
+	color: #191c27;
+}
+
 .sideBar {
 	height: 100%;
 	width: 200px;
@@ -56,6 +60,7 @@
 		font-size: 18px;
 	}
 }
+
 /* .test{
 	color: #f4f4f4 !important;
 }

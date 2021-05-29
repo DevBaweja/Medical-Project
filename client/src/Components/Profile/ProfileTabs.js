@@ -47,7 +47,7 @@ class ProfileTabs extends Component {
 						{following.map((person, i) => (
 							<div key={i}>
 								<div>
-									<Link to={`/user/${person._id}`}>
+									<Link href={`/user/${person._id}`} to={`/user/${person._id}`}>
 										<img
 											style={{
 												borderRadius: '50%',
@@ -56,7 +56,9 @@ class ProfileTabs extends Component {
 											className="float-left mr-2"
 											height="30px"
 											width="30px"
-											onError={i => (i.target.src = `${DefaultProfile}`)}
+											onError={e => {
+												e.target.src = `${DefaultProfile}`;
+											}}
 											src={`${serverUrl}/api/user/photo/${person._id}`}
 											alt={person.name}
 										/>

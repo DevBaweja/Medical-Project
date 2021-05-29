@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { submitQuery } from '../../Api/Query';
 import './style.css';
+import submitQuery from '../../Api/Query';
 import contactSvg from '../../Images/Contact Us/contactus.svg';
 import contactBg from '../../Images/Contact Us/contact_bg_curve.png';
-import address from '../../Images/Contact Us/address.svg';
-import email from '../../Images/Contact Us/email.svg';
-import call from '../../Images/Contact Us/call.svg';
-import map from '../../Images/Contact Us/map.svg';
+import addressSvg from '../../Images/Contact Us/address.svg';
+import emailSvg from '../../Images/Contact Us/email.svg';
+import callSvg from '../../Images/Contact Us/call.svg';
+import mapSvg from '../../Images/Contact Us/map.svg';
 
 class ContactUs extends Component {
 	state = {
@@ -17,7 +17,9 @@ class ContactUs extends Component {
 
 	onFormSubmit = event => {
 		event.preventDefault();
-		submitQuery(this.state).then(data => {
+
+		const { name, email, query } = this.state;
+		submitQuery(name, email, query).then(data => {
 			if (data.status === 200) {
 				this.setState({
 					name: '',
@@ -84,38 +86,42 @@ class ContactUs extends Component {
 
 	render() {
 		return (
-			<div className= "contact-us">
-				<img className= "contact-bg-img" src= {contactBg}></img> 
-				<div className= "container">
-					<div className= "row contact-us_intro">
-						<div className= "col">
-							<div className= "contact-us_title">
-								<div className= "motto">Contact Us</div>
+			<div className="contact-us">
+				<img className="contact-bg-img" src={contactBg} />
+				<div className="container">
+					<div className="row contact-us_intro">
+						<div className="col">
+							<div className="contact-us_title">
+								<div className="motto">Contact Us</div>
 							</div>
-							<div className= "contact-us_content">
-								<div className= "content-line">If you have any questions or queries a member of staff will always be happy to help. 
+							<div className="contact-us_content">
+								<div className="content-line">
+									If you have any questions or queries a member of staff will
+									always be happy to help.
 								</div>
-								<div className= "content-line">Feel free to contact us by telephone or email and we will be sure to get back to you as soon as possible.
+								<div className="content-line">
+									Feel free to contact us by telephone or email and we will be
+									sure to get back to you as soon as possible.
 								</div>
 							</div>
 						</div>
-						<div className= "col contact-svg">
-							<img src= {contactSvg} class= "contact-svg_svg"></img>
+						<div className="col contact-svg">
+							<img src={contactSvg} class="contact-svg_svg" />
 						</div>
 					</div>
-					<div className= "row">
-						<div className= "col">
+					<div className="row">
+						<div className="col">
 							<div class="contact-us_card">
-								<img src= {address} class="contact-card_icon"></img>
+								<img src={addressSvg} class="contact-card_icon" />
 								<div class="contact-card_heading">Our Address</div>
 								<div class="contact-card_text">
 									The LNM Institute of Information Technology, Jaipur (Rajsthan)
 								</div>
 							</div>
 						</div>
-						<div className= "col">
+						<div className="col">
 							<div class="contact-us_card">
-								<img src= {email} class="contact-card_icon"></img>
+								<img src={emailSvg} class="contact-card_icon" />
 								<div class="contact-card_heading">Email Us</div>
 								<div class="contact-card_text">
 									<div>customer.care@medipro.com</div>
@@ -123,12 +129,10 @@ class ContactUs extends Component {
 								</div>
 							</div>
 						</div>
-						<div className= "col">
+						<div className="col">
 							<div class="contact-us_card">
-								<img src= {call} class="contact-card_icon"></img>
-								<div class="contact-card_heading">
-									Call Us
-								</div>
+								<img src={callSvg} class="contact-card_icon" />
+								<div class="contact-card_heading">Call Us</div>
 								<div class="contact-card_text">
 									<div>0731-6357412</div>
 									<div>0731-8957123</div>
@@ -138,10 +142,19 @@ class ContactUs extends Component {
 					</div>
 				</div>
 				<div className=" container contact-map_box  mb-4">
-              		<img src= {map} className= "contact-map_icon"></img>
-              		<h3 className= "location">Location</h3>
-              		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.964304229176!2d75.92133461504544!3d26.936346083117396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dba21e8a1d1c9%3A0x5ab565cce4d44c2b!2sThe%20LNM%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1590495186289!5m2!1sen!2sin" width= "1000" height= "600" className= "contact-us_map" aria-hidden= "false" tabIndex="0" allowFullScreen frameBorder="0"></iframe>
-            	</div>
+					<img src={mapSvg} className="contact-map_icon" />
+					<h3 className="location">Location</h3>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.964304229176!2d75.92133461504544!3d26.936346083117396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dba21e8a1d1c9%3A0x5ab565cce4d44c2b!2sThe%20LNM%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1590495186289!5m2!1sen!2sin"
+						width="1000"
+						height="600"
+						className="contact-us_map"
+						aria-hidden="false"
+						tabIndex="0"
+						allowFullScreen
+						frameBorder="0"
+					/>
+				</div>
 			</div>
 			// <div className="container contact-page">
 			// 	<div className="row contact-head">

@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { getPathy } from '../../Api/pathys';
+import { getPathy } from '../../Api/Pathy';
 import { isAuthenticated } from '../../Api';
 
 class Pathy extends React.Component {
@@ -17,6 +17,7 @@ class Pathy extends React.Component {
 			}
 		});
 	}
+
 	render() {
 		return (
 			<div className="container">
