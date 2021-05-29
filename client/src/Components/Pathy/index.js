@@ -1,6 +1,6 @@
 import React from 'react';
 import './style.css';
-import { getPathy } from '../../Api/pathys';
+import { getPathy } from '../../Api/Pathy';
 import { isAuthenticated } from '../../Api';
 import pathySvg from '../../Images/Pathy/pathy_bg.svg';
 import pathyBg from '../../Images/Pathy/pathy_bg_curve.png';
@@ -22,6 +22,7 @@ class Pathy extends React.Component {
 			}
 		});
 	}
+
 	render() {
 		return (
 			<div className= "pathy">

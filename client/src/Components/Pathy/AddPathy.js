@@ -1,37 +1,33 @@
 import React from 'react';
 import './style.css';
-import { createPathy } from '../../Api/pathys';
+import { createPathy } from '../../Api/Pathy';
 
 class AddPathy extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: '',
-			effective: '',
-			description: '',
-		};
-		this.handleChange = this.handleChange.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+	state = {
+		title: '',
+		effective: '',
+		description: '',
+	};
 
 	handleChange = name => event => {
 		this.setState({
-			[name.trim()]: event.target.value,
+			[name]: event.target.value,
 		});
 	};
 
 	handleSubmit = async event => {
-		const { title, description, effective } = this.state;
-		var object = {
-			title,
-			description,
-			effective,
-		};
-
-		const res = await createPathy(object);
-		console.log('ddnjsanjsnfjnfjansdsan');
 		event.preventDefault();
-		createPathy(this.state.title, this.state.description, this.state.effective);
+		const { title, description, effective } = this.state;
+
+		const res = await createPathy(title, description, effective);
+		console.log(res);
+		if (res.status === 200) {
+			this.setState({
+				title: '',
+				effective: '',
+				description: '',
+			});
+		}
 	};
 
 	render() {
@@ -47,10 +43,11 @@ class AddPathy extends React.Component {
 						<div className="card-title">Add New Pathy</div>
 						<form onSubmit={this.handleSubmit}>
 							<div className="form-group">
-								<label>Name of Pathy</label>
+								<label htmlFor="title">Name of Pathy</label>
 								<input
 									type="text"
 									className="form-control"
+									id="title"
 									name="title"
 									value={this.state.title}
 									onChange={this.handleChange('title')}
@@ -74,7 +71,8 @@ class AddPathy extends React.Component {
 							<div className="form-group">
 								<label>Description</label>
 								<textarea
-									style={{ height: '100px' }}
+									rows="4"
+									// style={{ height: '100px' }}
 									className="form-control"
 									name="description"
 									value={this.state.description}

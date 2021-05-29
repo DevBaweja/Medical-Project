@@ -27,12 +27,12 @@ class EditProfile extends React.Component {
 	componentDidMount() {
 		// api that takes files
 		this.userData = new FormData();
-		const userId = this.props.match.params.userId;
+		const { userId } = this.props.match.params;
 		this.init(userId);
 	}
 
 	init = userId => {
-		const token = isAuthenticated().token;
+		const { token } = isAuthenticated();
 		read(userId, token).then(data => {
 			if (data.error) {
 				this.setState({ redirectToProfile: true });
@@ -113,8 +113,8 @@ class EditProfile extends React.Component {
 		this.setState({ loading: true });
 
 		if (this.isValid()) {
-			const userId = this.props.match.params.userId;
-			const token = isAuthenticated().token;
+			const { userId } = this.props.match.params;
+			const { token } = isAuthenticated();
 
 			update(userId, token, this.userData).then(data => {
 				if (data.error) {
@@ -151,7 +151,9 @@ class EditProfile extends React.Component {
 									style={{ height: '200px', width: 'auto' }}
 									className="img-thumbnail"
 									src={photoUrl}
-									onError={i => (i.target.src = `${DefaultProfile}`)}
+									onError={e => {
+										e.target.src = `${DefaultProfile}`;
+									}}
 									alt={name}
 								/>
 							) : (
@@ -159,7 +161,9 @@ class EditProfile extends React.Component {
 									style={{ height: '200px', width: 'auto' }}
 									className="img-thumbnail"
 									src={photoUrl}
-									onError={i => (i.target.src = `${DefaultProfile}`)}
+									onError={e => {
+										e.target.src = `${DefaultProfile}`;
+									}}
 									alt={name}
 								/>
 							)}

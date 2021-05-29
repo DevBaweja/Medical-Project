@@ -1,23 +1,14 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom'; // withRouter is higher order componenet which means it takes anaother component as argument
+import { Link, withRouter } from 'react-router-dom';
+import { Dropdown } from 'react-bootstrap';
 import logo from '../../Images/logo.svg';
 import { signout, isAuthenticated } from '../../Api';
 import './style.css';
-import { Dropdown } from 'react-bootstrap';
-
-const isActive = (history, path) => {
-	if (history.location.pathname === path) return { color: 'white' };
-};
 
 class NavDropdown extends React.Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			isToggleOn: false,
-		};
-	}
+	state = {
+		isToggleOn: false,
+	};
 
 	showDropdown(e) {
 		e.preventDefault();
@@ -32,14 +23,13 @@ class NavDropdown extends React.Component {
 			<li className="nav-item dropdown"> {/*user after login*/}
 				<Link
 					className="nav-link dropdown-toggle"
-					href="/"
 					id="navbarDropdown"
 					role="button"
 					data-toggle="dropdown"
 					aria-haspopup="true"
 					aria-expanded="false"
+					href={`/user/${isAuthenticated().user._id}`}
 					to={`/user/${isAuthenticated().user._id}`}
-					style={{ color: '#fff' }}
 					onClick={e => {
 						this.showDropdown(e);
 					}}
@@ -63,40 +53,20 @@ class NavDropdown extends React.Component {
 }
 
 class Navigation extends React.Component {
-	constructor(props) {
-		super(props);
-		this.listener = null;
-		this.state = {
-			status: 'top',
-		};
-	}
-	componentDidMount() {
-		this.listener = document.addEventListener('scroll', e => {
-			var scrolled = document.scrollingElement.scrollTop;
-			if (scrolled >= 120) {
-				if (this.state.status !== 'amir') {
-					this.setState({ status: 'amir' });
-				}
-			} else {
-				if (this.state.status !== 'top') {
-					this.setState({ status: 'top' });
-				}
-			}
-		});
-	}
+	isActive = (history, path) => {
+		if (history.location.pathname === path) return { color: 'white' };
+		return { color: 'inherit' };
+	};
 
-	componentDidUpdate() {
-		document.removeEventListener('scroll', this.listener);
-	}
 	render() {
 		const { history } = this.props;
+		console.log(history);
 		return (
 			<div>
 				<nav
-					className="navbar fixed-top navbar-expand-lg navbar-dark "
+					className="navbar fixed-top navbar-expand-lg "
 					style={{
-						backgroundColor: this.state.status === 'top' ? '#44475b' : '#44475b',
-						color: this.state === 'top' ? 'white' : 'blue',
+						backgroundColor: 'transparent',
 						width: '100%',
 					}}
 				>
@@ -119,10 +89,11 @@ class Navigation extends React.Component {
 						<ul className="nav navbar-nav navbar-nav mr-auto">
 							<li className="nav-item">
 								<Link
-									className="nav-link"
-									style={isActive(history, '/')}
-									style={{ marginTop: 4 }}
+									href="/"
 									to="/"
+									className="nav-link"
+									style={this.isActive(history, '/')}
+									style={{ marginTop: 4 }}
 								>
 									Home
 								</Link>
@@ -175,7 +146,7 @@ class Navigation extends React.Component {
 							<li className="nav-item">
 								<Link
 									className="nav-link"
-									style={isActive(history, '/posts')}
+									style={this.isActive(history, '/posts')}
 									style={{ marginTop: 4 }}
 									to="/posts"
 								>
@@ -186,7 +157,7 @@ class Navigation extends React.Component {
 							<li className="nav-item">
 								<Link
 									className="nav-link"
-									style={isActive(history, '/pathy')}
+									style={this.isActive(history, '/pathy')}
 									style={{ marginTop: 4 }}
 									to="/pathy"
 								>
@@ -197,7 +168,7 @@ class Navigation extends React.Component {
 							<li className="nav-item">
 								<Link
 									className="nav-link"
-									style={isActive(history, '/aboutus')}
+									style={this.isActive(history, '/aboutus')}
 									style={{ marginTop: 4 }}
 									to="/aboutus"
 								>
@@ -208,7 +179,7 @@ class Navigation extends React.Component {
 							<li className="nav-item">
 								<Link
 									className="nav-link"
-									style={isActive(history, '/contactus')}
+									style={this.isActive(history, '/contactus')}
 									style={{ marginTop: 4 }}
 									to="/contactus"
 								>
@@ -219,7 +190,7 @@ class Navigation extends React.Component {
 							<li className="nav-item">
 								<Link
 									className="nav-link"
-									style={isActive(history, '/feedback')}
+									style={this.isActive(history, '/feedback')}
 									style={{ marginTop: 4 }}
 									to="/feedback"
 								>
@@ -234,7 +205,7 @@ class Navigation extends React.Component {
 									<li className="nav-item">
 										<Link
 											className="nav-link"
-											style={isActive(history, '/signin')}
+											style={this.isActive(history, '/signin')}
 											to="/signin"
 										>
 											<button
@@ -248,7 +219,7 @@ class Navigation extends React.Component {
 									<li className="nav-item">
 										<Link
 											className="nav-link"
-											style={isActive(history, '/signup')}
+											style={this.isActive(history, '/signup')}
 											to="/signup"
 										>
 											<button
@@ -265,7 +236,7 @@ class Navigation extends React.Component {
 								<li className="nav-item">
 									<Link
 										to="/admin"
-										style={isActive(history, `/admin`)}
+										style={this.isActive(history, `/admin`)}
 										className="nav-link"
 									>
 										Admin
@@ -310,7 +281,8 @@ class Navigation extends React.Component {
 									<a
 										className="dropdown-item"
 										style={
-											(isActive(history, '/signup'), { cursor: 'pointer' })
+											(this.isActive(history, '/signup'),
+											{ cursor: 'pointer' })
 										}
 										onClick={() => signout(() => history.push('/'))}
 									>

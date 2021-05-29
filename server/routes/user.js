@@ -1,20 +1,20 @@
 const express = require('express');
 const {
-  userById,
-  allUsers,
-  getUser,
-  updateUser,
-  deleteUser,
-  userPhoto,
-  addFollowing,
-  addFollower,
-  removeFollowing,
-  removeFollower,
-  findPeople,
-  hasAuthorization,
-  addBookmark,
-  removeBookmark,
-  userCount,
+    userById,
+    allUsers,
+    getUser,
+    updateUser,
+    deleteUser,
+    userPhoto,
+    addFollowing,
+    addFollower,
+    removeFollowing,
+    removeFollower,
+    findPeople,
+    hasAuthorization,
+    addBookmark,
+    removeBookmark,
+    userCount,
 } = require('../controllers/user');
 const { requireSignin } = require('../controllers/auth');
 
@@ -29,9 +29,9 @@ router.get('/user/count', userCount);
 router.get('/users', allUsers); // access to all and no authentication for this
 router.get('/user/:userId', requireSignin, getUser); // need middleware requireSignin
 router.put('/user/:userId', requireSignin, updateUser); // PATCH is for making small update and PUT for whole obj update
+router.delete('/user/:userId', requireSignin, deleteUser);
 // photo
 router.get('/user/photo/:userId', userPhoto); // get photo with separate router to increase efficiency
-router.delete('/user/:userId', requireSignin, deleteUser);
 
 // who to follow
 router.get('/user/findpeople/:userId', requireSignin, findPeople);
