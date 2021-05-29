@@ -42,9 +42,9 @@ class AboutUs extends React.Component {
 								<div className= "motto">About Us</div>
 							</div>
 							<div className= "about-us_content">
+								<div className= "content-line">Super easy to use, fast results, and crystal clear.</div>
 								<div className= "content-line">Consulting in India was none of the above.</div>
 								<div className= "content-line">But we're changing that.</div>
-								<div className= "content-line">Super easy to use, fast results, and crystal clear.</div>
 							</div>
 
 						</div>
