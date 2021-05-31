@@ -10,14 +10,13 @@ const expressValidator = require('express-validator');
 const fs = require('fs');
 const path = require('path');
 // dotenv to remove this error MongooseError: The `uri` parameter to `openUri()` must be a string, got "undefined". Make sure the first parameter to `mongoose.connect()` or `mongoose.createConnection()` is a string.
-// const dotenv = require('dontenv');
-// const config = require('./config');
-require('dotenv').config();
+// require('dontenv').config();
+const config = require('./config');
 
 // db
 // MONGO_URI=mongodb://localhost/nodeapi
 mongoose
-    .connect(process.env.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    .connect(config.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('DB Connected'));
 
 mongoose.connection.on('error', err => {
@@ -74,6 +73,7 @@ app.use('/api', feedbackRoutes);
 app.use('/api', mailchimpRoutes);
 app.use('/api', queryRoutes);
 app.use('/api', pathyRoutes);
+// Catching error from expressJwt
 app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
         // if encountered UnauthorizedError, provide this validation
@@ -85,4 +85,3 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`A Node Js API is listening on port: ${port}`);
 });
-//scsd
