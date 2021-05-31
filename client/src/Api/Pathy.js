@@ -21,7 +21,7 @@ export const getPathy = async () => {
 	try {
 		const response = await axios({
 			method: 'GET',
-			url: `${serverUrl}/api/pathy`,
+			url: `${serverUrl}/api/pathys`,
 		});
 		return response;
 	} catch (err) {
