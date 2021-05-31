@@ -35,7 +35,7 @@ const queryRoutes = require('./routes/query');
 const pathyRoutes = require('./routes/pathys');
 // apiDocs
 app.get('/api', (req, res) => {
-    fs.readFile('docs/apiDocs.json', (err, data) => {
+    fs.readFile('./server/docs/apiDocs.json', (err, data) => {
         if (err) {
             res.status(400).json({
                 error: err,

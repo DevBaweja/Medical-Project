@@ -25,45 +25,47 @@ class Pathy extends React.Component {
 
 	render() {
 		return (
-			<div className= "pathy">
-				<img className= "pathy-bg-img" src= {pathyBg}></img> 
-				<div className= "container">
-					<div className= "row pathy_intro">
-						<div className= "col">
-							<div className= "pathy_title">
-								<div className= "motto">Pathy</div>
+			<div className="pathy">
+				<img className="pathy-bg-img" src={pathyBg} />
+				<div className="container">
+					<div className="row pathy_intro">
+						<div className="col">
+							<div className="pathy_title">
+								<div className="motto">Pathy</div>
 							</div>
-							<div className= "pathy_content">
-								<div className= "content-line">Consulting in India was none of the above.</div>
-								<div className= "content-line">But we're changing that.</div>
-								<div className= "content-line">Super easy to use, fast results, and crystal clear.</div>
+							<div className="pathy_content">
+								<div className="content-line">
+									Consulting in India was none of the above.
+								</div>
+								<div className="content-line">But we're changing that.</div>
+								<div className="content-line">
+									Super easy to use, fast results, and crystal clear.
+								</div>
 							</div>
 						</div>
-						<div className= "col pathy-svg">
-							<img src= {pathySvg} class= "pathy-svg_svg"></img>
+						<div className="col pathy-svg">
+							<img src={pathySvg} class="pathy-svg_svg" />
 						</div>
 					</div>
-					<div className= "row">
-						<div className= "col">
+					<div className="row">
+						<div className="col">
 							<div class="pathy_card">
-								<img src= {pathy} class="pathy-card_icon"></img>
+								<img src={pathy} class="pathy-card_icon" />
 								<div class="pathy-card_heading">15</div>
 								<div class="pathy-card_text">Pathies</div>
 							</div>
 						</div>
-						<div className= "col">
+						<div className="col">
 							<div class="pathy_card">
-								<img src= {tag} class="pathy-card_icon pathy-icon-tag"></img>
+								<img src={tag} class="pathy-card_icon pathy-icon-tag" />
 								<div class="pathy-card_heading">50</div>
 								<div class="pathy-card_text">Most Effective Tags</div>
 							</div>
 						</div>
-						<div className= "col">
+						<div className="col">
 							<div class="pathy_card">
-								<img src= {trueIcon} class="pathy-card_icon pathy-icon-true"></img>
-								<div class="pathy-card_heading">
-									100%
-								</div>
+								<img src={trueIcon} class="pathy-card_icon pathy-icon-true" />
+								<div class="pathy-card_heading">100%</div>
 								<div class="pathy-card_text">True Data</div>
 							</div>
 						</div>
@@ -102,10 +104,8 @@ class Pathy extends React.Component {
 							</div>
 						);
 					})}
-
-					
 				</div>
-			</div> 
+			</div>
 		);
 	}
 }
