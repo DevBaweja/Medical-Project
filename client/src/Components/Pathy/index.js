@@ -18,7 +18,7 @@ class Pathy extends React.Component {
 			if (data.error) {
 				this.setState({ error: data.error });
 			} else {
-				this.setState({ pathy: data });
+				this.setState({ pathy: data.data });
 			}
 		});
 	}
