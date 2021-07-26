@@ -20,7 +20,9 @@ class NavDropdown extends React.Component {
 	render() {
 		const classDropdownMenu = `dropdown-menu${this.state.isToggleOn ? ' show' : ''}`;
 		return (
-			<li className="nav-item dropdown"> {/*user after login*/}
+			<li className="nav-item dropdown">
+				{' '}
+				{/*user after login*/}
 				<Link
 					className="nav-link dropdown-toggle"
 					id="navbarDropdown"
@@ -66,7 +68,7 @@ class Navigation extends React.Component {
 				<nav
 					className="navbar fixed-top navbar-expand-lg "
 					style={{
-						backgroundColor: 'transparent',
+						backgroundColor: '#191c27',
 						width: '100%',
 					}}
 				>

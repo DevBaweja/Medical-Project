@@ -1,5 +1,9 @@
 .nav-link {
-	color: #191c27;
+	color: white;
+}
+.nav-link:hover {
+	color: #00d09c;
+	text-decoration: none;
 }
 
 .sideBar {
@@ -31,12 +35,17 @@
 	margin-left: 160px;
 	padding: 0px 10px;
 }
-
+/* Groww green background - #e5faf5
+Groww green button - #00d09c
+Groww blue footer  - #191c27
+Groww blue background - #5367ff
+Groww grey font - #44475b
+Groww grey background - #ecedef */
 .signup {
-	background-color: rgba(0, 0, 0, 0) !important;
-	color: #b7bcb9;
-	border: 3px solid #b7bcb9;
-	border-radius: 50px;
+	background-color: #00d09c !important;
+	color: #191c27;
+	border: 3px solid;
+	border-radius: 10px;
 }
 .signupAfter {
 	background-color: white;
@@ -45,7 +54,8 @@
 .signin {
 	background-color: rgba(0, 0, 0, 0);
 	color: #b7bcb9;
-	border-radius: 50px;
+	border: 3px solid #191c27;
+	/* border-radius: 50px; */
 }
 
 .signinAftter {
