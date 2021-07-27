@@ -4,44 +4,18 @@ const crypto = require('crypto');
 const { ObjectId } = mongoose.Schema;
 
 const userSchema = new mongoose.Schema({
-    username: {
-        type: String,
-        trim: true,
-    },
-    name: {
-        type: String,
-        trim: true,
-        required: true,
-    },
-    email: {
-        type: String,
-        trim: true,
-        required: true,
-    },
-    hashed_password: {
-        type: String,
-        required: true,
-    },
+    username: { type: String, trim: true },
+    name: { type: String, trim: true, required: true },
+    email: { type: String, trim: true, required: true },
+    hashed_password: { type: String, required: true },
     salt: String,
-    created: {
-        type: Date,
-        default: Date.now,
-    },
+    created: { type: Date, default: Date.now },
     updated: Date,
-    photo: {
-        data: Buffer,
-        contentType: String,
-    },
-    about: {
-        type: String,
-        trim: true,
-    },
+    photo: { data: Buffer, contentType: String },
+    about: { type: String, trim: true },
+    role: { type: String, default: 'subscriber' },
     following: [{ type: ObjectId, ref: 'User' }],
     followers: [{ type: ObjectId, ref: 'User' }],
-    role: {
-        type: String,
-        default: 'subscriber',
-    },
     bookmarks: [{ type: ObjectId, ref: 'Subdisease' }],
 });
 

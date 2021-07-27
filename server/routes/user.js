@@ -20,20 +20,25 @@ const { requireSignin } = require('../controllers/auth');
 
 const router = express.Router();
 
+// Follow or Unfollow
 router.put('/user/follow', requireSignin, addFollowing, addFollower);
 router.put('/user/unfollow', requireSignin, removeFollowing, removeFollower);
-//add or remove bookmark
+
+// Add or Remove bookmark
 router.put('/user/bookmark', addBookmark);
 router.put('/user/unbookmark', removeBookmark);
 router.get('/user/count', userCount);
-router.get('/users', allUsers); // access to all and no authentication for this
-router.get('/user/:userId', requireSignin, getUser); // need middleware requireSignin
-router.put('/user/:userId', requireSignin, updateUser); // PATCH is for making small update and PUT for whole obj update
-router.delete('/user/:userId', requireSignin, deleteUser);
-// photo
-router.get('/user/photo/:userId', userPhoto); // get photo with separate router to increase efficiency
 
-// who to follow
+// CRUD for users
+router.get('/users', allUsers);
+router.get('/user/:userId', requireSignin, getUser);
+router.put('/user/:userId', requireSignin, updateUser);
+router.delete('/user/:userId', requireSignin, deleteUser);
+
+// Photo
+router.get('/user/photo/:userId', userPhoto);
+
+// Find people to follow
 router.get('/user/findpeople/:userId', requireSignin, findPeople);
 
 // any route containing :userId, our app will first execute userByID()

@@ -64,15 +64,6 @@
 //     });
 // };
 
-// exports.userPhoto = (req, res, next) => {
-//   if (req.profile.photo.data) {
-//     res.set(("Content-Type", req.profile.photo.contentType));
-//     console.log("hsdbfjhds", req.profile );
-//     return res.send(req.profile.photo.data);
-//   }
-//   next();
-// };
-
 // // follow unfollow
 // exports.addFollowing = (req, res, next) => {
 //   User.findByIdAndUpdate(
@@ -175,14 +166,10 @@ exports.userById = (req, res, next, id) => {
         });
 };
 
-exports.userCount = (req, res) => {
+exports.userCount = (_, res) => {
     User.find({}, (err, result) => {
-        if (err) {
-            return res.send(err);
-        } else {
-            console.log('count', result.length);
-            return res.json({ count: result.length });
-        }
+        if (err) return res.send(err);
+        return res.json({ count: result.length });
     });
 };
 
@@ -202,13 +189,13 @@ exports.hasAuthorization = (req, res, next) => {
     next();
 };
 
-exports.allUsers = (req, res) => {
+exports.allUsers = (_, res) => {
     User.find((err, users) => {
-        if (err) {
+        if (err)
             return res.status(400).json({
                 error: err,
             });
-        }
+
         users.forEach(user => {
             user.hashed_password = undefined;
             user.salt = undefined;
@@ -241,7 +228,6 @@ exports.getUser = (req, res) => {
 
 exports.updateUser = (req, res, next) => {
     let form = new formidable.IncomingForm();
-    // console.log("incoming form data: ", form);
     form.keepExtensions = true;
     form.parse(req, (err, fields, files) => {
         if (err) {
@@ -249,11 +235,9 @@ exports.updateUser = (req, res, next) => {
                 error: 'Photo could not be uploaded',
             });
         }
-        // save user
         let user = req.profile;
-        console.log(user);
+        console.log(fields);
         user = _.extend(user, fields);
-        console.log(user);
         user.updated = Date.now();
 
         if (files.photo) {
@@ -275,9 +259,9 @@ exports.updateUser = (req, res, next) => {
 };
 
 exports.userPhoto = (req, res, next) => {
+    // console.log(req.profile);
     if (req.profile.photo.data) {
         res.set(('Content-Type', req.profile.photo.contentType));
-        // return res.send(req.profile.photo.data);
         return res.send(req.profile.photo.data);
     }
     next();

@@ -50,7 +50,7 @@ class EditProfile extends React.Component {
 
 	isValid = () => {
 		const { name, email, password, fileSize } = this.state;
-		if (fileSize > 100000) {
+		if (false || fileSize > 100000) {
 			// upto 1Mb upload limit
 			this.setState({ error: 'File size should be less than 100kb/1Mb' });
 			return false;
