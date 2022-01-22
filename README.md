@@ -35,5 +35,5 @@ This project is currently in development. Users can post some posts and view the
 ### Reflection
 
 This was a 12 month long project built for my BTech final year presentation . Project goals included using technologies learned up until this point and familiarizing myself with documentation for new features.  
-Originally the idea was presented ny my mentor Dr. Amit neogi, and with further research and discussion, I created the wireframes and basic technologies to be used.
+Originally the idea was presented our my mentor Dr. Amit neogi, and with further research and discussion, I created the wireframes and basic technologies to be used.
 
